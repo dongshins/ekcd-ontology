@@ -113,11 +113,27 @@ EKCD is intended to support a practical workflow such as:
 - prepare researcher input in spreadsheet templates
 - transform spreadsheet data into RDF/OWL through **Cellfie**
 - generate:
-  - an ABox dataset
-  - a separate links dataset
+  - an **ABox dataset**
+  - a separate **links dataset**
 - validate and review outputs before public release
 
 This repository is therefore not only an ontology publication space, but also a maintenance base for ontology-driven dataset production.
+
+---
+
+## Citation
+
+A Zenodo DOI will be used for formal citation once the corresponding GitHub release is archived.
+
+Suggested citation form will be added after the first DOI-backed release.
+
+---
+
+## Maintainer
+
+**Dong Shin SEO**
+
+EKCD is maintained as a personal derivative ontology line based on EKC, for ongoing ontology refinement and dataset construction in Korean cultural heritage and digital humanities contexts.
 
 ---
 
