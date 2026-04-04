@@ -82,6 +82,7 @@ Versioned snapshots may be stored separately from the working ontology file for 
 
 ## Repository Structure
 
+```text
 ekcd-ontology/
 ├─ README.md
 ├─ CHANGELOG.md
@@ -102,7 +103,7 @@ ekcd-ontology/
 │  └─ EKCD_Cellfie_Template.xlsx
 └─ /checksums/
    └─ sha256.txt
-
+```
 ---
 
 ## License
