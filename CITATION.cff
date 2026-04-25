@@ -33,3 +33,6 @@ abstract: >-
   heritage knowledge modeling. It is designed as a derivative ontology line
   that builds on the EKC core ontology while providing extended local guidance
   for semantic mapping and date-oriented modeling.
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19753665
