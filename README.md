@@ -6,7 +6,8 @@ EKCD is an EKC-derived ontology in OWL/Turtle designed to refine and extend sele
 **Ontology title:** `EKCD: EKC Derived Ontology`  
 **Namespace prefix:** `ekcd:`  
 **Preferred namespace URI:** `http://dh.aks.ac.kr/ontologies/ekcd#`
-
+**Concept DOI (all versions):** `10.5281/zenodo.19753664` [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753664.svg)](https://doi.org/10.5281/zenodo.19753664) 
+**Version DOI (v1.0.4):** `10.5281/zenodo.19753665` [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753665.svg)](https://doi.org/10.5281/zenodo.19753665) 
 ---
 
 ## Overview
@@ -123,9 +124,7 @@ This repository is therefore not only an ontology publication space, but also a 
 
 ## Citation
 
-A Zenodo DOI will be used for formal citation once the corresponding GitHub release is archived.
-
-Suggested citation form will be added after the first DOI-backed release.
+SEO, D. S. EKCD: An EKC-derived Ontology in OWL/Turtle for Extensible Korean Cultural Heritage Knowledge Modeling. v1.0.4, Zenodo, 25 Apr. 2026, https://doi.org/10.5281/zenodo.19753665.
 
 ---
 
