@@ -5,8 +5,8 @@ EKCD is an EKC-derived ontology in OWL/Turtle designed to refine and extend sele
 **Repository:** `ekcd-ontology`  
 **Ontology title:** `EKCD: EKC Derived Ontology`  
 **Namespace prefix:** `ekcd:`  
-**Preferred namespace URI:** `http://dh.aks.ac.kr/ontologies/ekcd#`
-**Concept DOI (all versions):** `10.5281/zenodo.19753664` [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753664.svg)](https://doi.org/10.5281/zenodo.19753664) 
+**Preferred namespace URI:** `http://dh.aks.ac.kr/ontologies/ekcd#`  
+**Concept DOI (all versions):** `10.5281/zenodo.19753664` [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753664.svg)](https://doi.org/10.5281/zenodo.19753664)  
 **Version DOI (v1.0.4):** `10.5281/zenodo.19753665` [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753665.svg)](https://doi.org/10.5281/zenodo.19753665) 
 
 ---
