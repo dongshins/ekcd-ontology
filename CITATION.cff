@@ -20,11 +20,7 @@ contact:
     orcid: "https://orcid.org/0009-0007-4477-6547"
     affiliation: "The Center for Digital Humanities at the Academy of Korean Studies"
 abstract: >-
-  EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage
-  knowledge modeling. It provides additional datatype properties for dates and
-  URLs, local application guidelines for standard semantic mapping properties,
-  and project-level semantic extensions while preserving conceptual continuity
-  with the EKC ontology line.
+  EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage knowledge modeling. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions while preserving conceptual continuity with the EKC ontology line.
 keywords:
   - ontology
   - OWL
