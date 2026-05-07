@@ -1,59 +1,71 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to the EKCD ontology release line are documented in this file.
 
-This project follows:
-- Semantic Versioning (SemVer) for public releases (e.g., `v1.0.4`)
-- A release-documentation workflow based on versioned GitHub releases and archived ontology snapshots
+The format follows a practical Keep-a-Changelog style, and version numbers follow the GitHub/Zenodo release tags used for the ontology snapshots.
 
-## Evidence for ontology-header dates
-
-- The primary date shown in a release header is based on the ontology-header values in the released TTL, especially `dcterms:issued` and `dcterms:modified`.
-- If the GitHub publication date differs from the ontology-header date, the ontology-header date remains the primary documentary reference for ontology revision timing.
-
----
-
-## EKCD v1.0.4 — 2026-04-17 (First Public Release)
-
-### Overview
-
-**EKCD v1.0.4** is the first public release of the **EKCD (EKC-derived) ontology** line.
-It establishes an archived and citable baseline for a derivative ontology that extends EKC for ongoing Korean cultural heritage knowledge modeling, especially in areas of date-oriented datatype properties, operational mapping guidance, and project-level semantic extensions.
+## [1.0.7] - 2026-05-07
 
 ### Added
 
-- First public release of the `ekcd:` ontology line
-- Publicly versioned ontology metadata for **EKCD v1.0.4**
-- Import relationship to **EKC 2025** as the institutional baseline
-- Date-oriented datatype properties:
+- Added `voaf:Vocabulary` typing to the ontology resource `http://dh.aks.ac.kr/ontologies/ekcd`.
+- Added VANN namespace metadata:
+  - `vann:preferredNamespacePrefix "ekcd"`
+  - `vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#"`
+- Added the `vann:` prefix declaration to the Turtle serialization.
+
+### Changed
+
+- Updated `owl:versionInfo` from `EKCD v1.0.4` to `EKCD v1.0.7`.
+- Updated `dcterms:modified` from `2026-04-17` to `2026-05-07`.
+- Revised ontology-level English and Korean descriptions to emphasize:
+  - Korean cultural heritage knowledge modeling;
+  - date and URL datatype-property support;
+  - local application guidelines for standard semantic mapping predicates;
+  - project-level semantic extensions.
+- Revised ontology title metadata:
+  - English: `EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling`
+  - Korean: `EKCD: 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지`
+
+### Fixed
+
+- Revised the Korean description of `ekcd:occurrenceDate` so that references to `startDate`, `endDate`, and `originalDate` use explicit `ekcd:` prefix notation instead of the local colon prefix.
+- Removed the unused bare `:` prefix declaration from the Turtle header.
+
+### Compatibility
+
+- No classes were added or removed.
+- No object properties were added or removed.
+- No datatype properties were added or removed.
+- No annotation properties were added or removed.
+- Existing EKCD term IRIs remain stable.
+
+### Ontology diff summary
+
+| Metric | v1.0.4 | v1.0.7 | Change |
+|---|---:|---:|---:|
+| RDF triples | 138 | 141 | +3 net |
+| OWL classes | 3 | 3 | 0 |
+| OWL object properties | 25 | 25 | 0 |
+| OWL datatype properties | 5 | 5 | 0 |
+| OWL annotation properties | 16 | 16 | 0 |
+| OWL ontology resources | 1 | 1 | 0 |
+
+Triple-level comparison: 10 triples added and 7 triples removed.
+
+## [1.0.4] - 2026-04-17
+
+### Added
+
+- First public DOI-backed EKCD ontology release.
+- Published EKCD as an EKC-derived OWL/Turtle ontology for Korean cultural heritage and digital humanities modeling.
+- Included initial EKCD datatype-property set:
   - `ekcd:occurrenceDate`
   - `ekcd:startDate`
   - `ekcd:endDate`
   - `ekcd:originalDate`
   - `ekcd:accessURL`
-- Local operational guidance for:
-  - `owl:sameAs`
-  - `skos:mappingRelation`
-  - `skos:exactMatch`
-  - `skos:closeMatch`
-- Local usage notes for `edm:isShownAt` / `edm:isShownBy` with `ekcd:accessURL`
+- Included local usage guidance for selected standard mapping and web-resource predicates, including `owl:sameAs`, `skos:exactMatch`, `skos:closeMatch`, `skos:mappingRelation`, `edm:isShownAt`, and `edm:isShownBy`.
 
-### Positioning
-
-- **EKC** remains the institutional baseline ontology.
-- **EKCD** is maintained as a derivative and extensible companion ontology.
-- The current release should be read as an initial public archival baseline, not as a replacement of EKC.
-
-### Compatibility
-
-- The ontology imports **EKC 2025** and is intended to remain interoperable with the EKC conceptual backbone.
-- Datasets may use EKCD as an active TBox in workflows that require derivative extensions.
-
-### Documentation
-
-- Release note: [`docs/releases/v1.0.4.md`](https://github.com/dongshins/ekcd-ontology/blob/main/docs/releases/v1.0.4.md)
-
-### Links
-
-- Release: [`v1.0.4`](https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.4)
-- Compare: not applicable for the first public release
+[1.0.7]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.7
+[1.0.4]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.4
