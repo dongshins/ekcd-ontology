@@ -8,6 +8,8 @@ The project follows a conservative semantic-versioning practice for ontology rel
 
 ## [v1.0.8] - 2026-05-08
 
+**Zenodo DOI:** https://doi.org/10.5281/zenodo.20078236
+
 ### Added
 
 - Added `ekcd:authoringPolicy` as an OWL annotation property.
@@ -123,5 +125,7 @@ Triple-level comparison: 10 triples added and 7 triples removed.
   - `ekcd:accessURL`
 - Included local usage guidance for selected standard mapping and web-resource predicates, including `owl:sameAs`, `skos:exactMatch`, `skos:closeMatch`, `skos:mappingRelation`, `edm:isShownAt`, and `edm:isShownBy`.
 
+[1.0.8]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.8
+[v1.0.8 DOI]: https://doi.org/10.5281/zenodo.20078236
 [1.0.7]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.7
 [1.0.4]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.4
