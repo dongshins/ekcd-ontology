@@ -1,136 +1,117 @@
-# EKCD
+# EKCD Ontology
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753664.svg)](https://doi.org/10.5281/zenodo.19753664)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-**EKCD** is an EKC-derived ontology in OWL/Turtle for extensible Korean cultural heritage knowledge modeling. It refines selected areas of the EKC data model while preserving conceptual continuity with the EKC ontology line.
+**EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, and local guidance for semantic mapping properties.
 
-- **Repository:** `ekcd-ontology`
-- **Ontology IRI:** `http://dh.aks.ac.kr/ontologies/ekcd`
-- **Version IRI:** `http://dh.aks.ac.kr/ontologies/ekcd_v1`
-- **Preferred namespace prefix:** `ekcd:`
-- **Preferred namespace URI:** `http://dh.aks.ac.kr/ontologies/ekcd#`
-- **Current release:** `v1.0.7`
-- **Concept DOI, all versions:** `10.5281/zenodo.19753664`
-- **License:** Creative Commons Attribution-ShareAlike 4.0 International (`CC-BY-SA-4.0`)
+- Current release: **v1.0.8**
+- Ontology IRI: `http://dh.aks.ac.kr/ontologies/ekcd`
+- Version IRI: `http://dh.aks.ac.kr/ontologies/ekcd_v1`
+- Preferred prefix: `ekcd`
+- Preferred namespace URI: `http://dh.aks.ac.kr/ontologies/ekcd#`
+- Imported ontology: `http://dh.aks.ac.kr/ontologies/ekc-2025`
+- Source ontology: `http://dh.aks.ac.kr/ontologies/ekc`
+- License: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Overview
 
-EKCD is a derivative ontology based on the EKC ontology. It supports ongoing ontology refinement and dataset construction for Korean cultural heritage and digital humanities research, especially where project-level modeling decisions need to be maintained outside the institutional EKC release line.
+EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. The ontology is intentionally small and conservative: v1.0.8 preserves the v1.0.7 class, object property, and datatype property sets while clarifying ontology metadata and serialization policy.
 
-EKCD is intended to serve as:
+The ontology currently includes:
 
-- a derived ontology that preserves conceptual continuity with EKC;
-- a working extension layer for local or project-level modeling decisions;
-- a practical TBox for producing ABox and links datasets through Protégé, spreadsheet templates, and Cellfie workflows;
-- a citable repository release line for OWL/Turtle vocabulary maintenance.
+| Category | Count in v1.0.8 | Notes |
+|---|---:|---|
+| OWL classes | 3 | Includes `ekc:3D_모델`, `ekc:3D_지도`, and `voaf:Vocabulary` declarations. |
+| OWL object properties | 25 | Reuses selected DCMI Terms, EDM, FOAF, OWL, and SKOS properties for EKCD modeling. |
+| OWL datatype properties | 5 | Adds EKCD-local properties for access URLs and date modeling. |
+| OWL annotation properties | 19 | Adds explicit declarations for EKCD and VANN annotation properties. |
+| OWL named individuals | 4 | Includes EKC/EKCD ontology resources and the DH-AKS organization resource. |
 
-## Relationship to EKC
+## Namespace policy
 
-EKCD does not replace EKC. It is a derivative and extensible companion ontology.
+As of **v1.0.8**, EKCD declares an explicit authoring policy:
 
-In this repository:
+> EKCD TBox files and related ABox data do not use `@base` declarations, the empty prefix `:`, or relative IRIs such as `<#...>`, `<...>`, and `<>`. EKC and EKCD resources must be explicitly written with the `ekc:` or `ekcd:` prefixed names.
 
-- institutional EKC remains the public baseline ontology line;
-- EKCD manages selected extensions, refinements, and local usage guidance by Dong Shin SEO;
-- datasets produced in the current workflow may use EKCD as the active TBox while remaining interoperable with the conceptual backbone of EKC.
+This policy is intended to make Turtle files easier to review, compare, and maintain across ontology and data releases.
 
-The ontology imports `http://dh.aks.ac.kr/ontologies/ekc-2025` and records the EKC source repository as `https://github.com/dongshins/EKC_ontology`.
+Recommended prefixes:
 
-## Scope
-
-The current EKCD release line covers three main areas.
-
-### 1. Additional datatype properties
-
-EKCD provides datatype properties used in date- and web-resource-oriented cultural heritage modeling:
-
-- `ekcd:occurrenceDate`
-- `ekcd:startDate`
-- `ekcd:endDate`
-- `ekcd:originalDate`
-- `ekcd:accessURL`
-
-### 2. Local usage guidance for standard mapping predicates
-
-EKCD keeps standard semantic-web predicates while adding local operational guidance for EKCD modeling practice, including:
-
-- `owl:sameAs`
-- `skos:exactMatch`
-- `skos:closeMatch`
-- `skos:mappingRelation`
-- `edm:isShownAt`
-- `edm:isShownBy`
-
-### 3. Repository-level ontology publication metadata
-
-Since `v1.0.7`, the ontology record is also typed as `voaf:Vocabulary` and declares VANN namespace metadata:
-
-- `vann:preferredNamespacePrefix "ekcd"`
-- `vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#"`
-
-## Latest release: v1.0.7
-
-`v1.0.7` is a metadata and namespace-clarification release based on comparison with `v1.0.4`.
-
-Summary of ontology-level changes:
-
-- added `voaf:Vocabulary` typing to the ontology resource;
-- added VANN preferred namespace metadata;
-- revised English and Korean ontology descriptions;
-- revised ontology title metadata;
-- updated `dcterms:modified` from `2026-04-17` to `2026-05-07`;
-- updated `owl:versionInfo` from `EKCD v1.0.4` to `EKCD v1.0.7`;
-- revised the Korean description of `ekcd:occurrenceDate` to use explicit `ekcd:` prefix references.
-
-No classes, object properties, datatype properties, or annotation properties were added or removed between `v1.0.4` and `v1.0.7`.
-
-For details, see [`docs/changes/v1.0.7-ontology-revision.md`](docs/changes/v1.0.7-ontology-revision.md).
-
-## Repository structure
-
-```text
-ekcd-ontology/
-├─ README.md
-├─ CHANGELOG.md
-├─ CITATION.cff
-├─ .zenodo.json
-├─ LICENSE
-├─ vocab/
-│  ├─ ekcd.ttl
-│  └─ versions/
-│     └─ ekcd_v1_0_7.ttl
-└─ docs/
-   └─ changes/
-      └─ v1.0.7-ontology-revision.md
+```turtle
+@prefix ekc:   <http://dh.aks.ac.kr/ontologies/ekc#> .
+@prefix ekcd:  <http://dh.aks.ac.kr/ontologies/ekcd#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix edm:   <http://www.europeana.eu/schemas/edm/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 ```
 
-If the actual ontology file is stored under a different path, keep the DOI/citation metadata unchanged and adjust only the file-path references above.
+## EKCD-local datatype properties
 
-## Data production workflow
+| Property | Range | Intended use |
+|---|---|---|
+| `ekcd:accessURL` | `xsd:anyURI` | Dereferenceable web address of a `WebResource` or `Multimedia` individual. In EKCD local practice, `edm:isShownBy` and `edm:isShownAt` remain object properties, while concrete URLs are recorded on the target resource with `ekcd:accessURL`. |
+| `ekcd:occurrenceDate` | `xsd:date` | Normalized date of a single event, activity, or historical occurrence. |
+| `ekcd:startDate` | `xsd:date` | Normalized start date of a period event. |
+| `ekcd:endDate` | `xsd:date` | Normalized end date of a period event. |
+| `ekcd:originalDate` | `rdfs:Literal` | Original date expression as attested in source materials, such as lunar-calendar or historically phrased dates. |
 
-EKCD is intended to support a practical ontology-driven workflow:
+## Date modeling
 
-1. maintain the TBox in Protégé;
-2. prepare researcher input in spreadsheet templates;
-3. transform spreadsheet data into RDF/OWL through Cellfie;
-4. generate an ABox dataset and a separate links dataset;
-5. validate the outputs before public release;
-6. publish citable ontology snapshots through GitHub Releases and Zenodo.
+Use `ekcd:occurrenceDate` for a single known occurrence date. For period events, prefer `ekcd:startDate` and `ekcd:endDate`. When the original source preserves a non-normalized date expression, record it with `ekcd:originalDate` as well.
+
+Example:
+
+```turtle
+ekcd:SomeHistoricalEvent
+    ekcd:startDate "1795-03-29"^^xsd:date ;
+    ekcd:endDate "1795-04-05"^^xsd:date ;
+    ekcd:originalDate "음력 1795년 윤2월 9일~16일"@ko .
+```
+
+## URL modeling
+
+In EKCD local practice, keep Europeana display properties as object properties:
+
+```turtle
+ekcd:SomeObject
+    edm:isShownAt ekcd:SomeLandingPage ;
+    edm:isShownBy ekcd:SomeImageResource .
+
+ekcd:SomeLandingPage
+    ekcd:accessURL "https://example.org/page"^^xsd:anyURI .
+
+ekcd:SomeImageResource
+    ekcd:accessURL "https://example.org/image.jpg"^^xsd:anyURI .
+```
+
+## Semantic mapping guidance
+
+EKCD distinguishes strict identity from conceptual or vocabulary mapping:
+
+| Property | EKCD usage |
+|---|---|
+| `owl:sameAs` | Use only when two URIs denote the same individual/resource. Do not use for mere similarity, cross-reference, or concept mapping. |
+| `skos:exactMatch` | Use for precise mapping between concepts in different concept schemes. It is not identical to OWL-level identity. |
+| `skos:closeMatch` | Use for close but not fully identical concept mapping. |
+| `skos:mappingRelation` | Super-property for mapping relations between different concept schemes. |
+
+## Release history
+
+See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.0.8-ontology-revision.md`](docs/changes/v1.0.8-ontology-revision.md) for the detailed v1.0.8 ontology revision note.
 
 ## Citation
 
-For general citation of the EKCD ontology release line, use the Concept DOI:
-
-> SEO, Dong Shin. **EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling**. Version 1.0.7. Zenodo, 2026. https://doi.org/10.5281/zenodo.19753664
-
-For exact reproducibility, cite the Version DOI assigned by Zenodo to the specific release used. After the `v1.0.7` GitHub release is archived by Zenodo, replace or supplement the citation above with the Zenodo Version DOI for `v1.0.7`.
+Please cite this ontology using the metadata in [`CITATION.cff`](CITATION.cff). If using a Zenodo archive, cite the DOI assigned to the specific archived version.
 
 ## Maintainer
 
-**Dong Shin SEO**  
-ORCID: <https://orcid.org/0009-0007-4477-6547>
-
-## License
-
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+- Dong Shin SEO / 서동신
+- ORCID: `0009-0007-4477-6547`
+- Contact point: `https://github.com/dongshins`
