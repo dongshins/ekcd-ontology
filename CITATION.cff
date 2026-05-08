@@ -1,46 +1,23 @@
 cff-version: 1.2.0
-message: "If you use EKCD Ontology, please cite it using the metadata from this file. For exact reproducibility, cite the Zenodo Version DOI assigned to the specific release you used."
-type: dataset
+message: "If you use the EKCD Ontology, please cite this release using the metadata below."
 title: "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling"
-version: "1.0.7"
-date-released: "2026-05-07"
-doi: "10.5281/zenodo.19753664"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.19753664"
-    description: "Concept DOI for all versions of the EKCD ontology release line."
+abstract: "EKCD is an EKC-derived ontology for Korean cultural heritage knowledge modeling. It provides project-level semantic extensions, local semantic mapping guidance, and datatype properties for date and URL modeling."
+version: "1.0.8"
+date-released: "2026-05-08"
+license: "CC-BY-SA-4.0"
 authors:
   - family-names: "SEO"
     given-names: "Dong Shin"
+    name-particle: ""
     orcid: "https://orcid.org/0009-0007-4477-6547"
-    affiliation: "The Center for Digital Humanities at the Academy of Korean Studies"
-contact:
-  - family-names: "SEO"
-    given-names: "Dong Shin"
-    orcid: "https://orcid.org/0009-0007-4477-6547"
-    affiliation: "The Center for Digital Humanities at the Academy of Korean Studies"
-abstract: >-
-  EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage knowledge modeling. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions while preserving conceptual continuity with the EKC ontology line.
-keywords:
-  - ontology
-  - OWL
-  - RDF
-  - Turtle
-  - linked data
-  - semantic web
-  - digital humanities
-  - Korean cultural heritage
-  - Korean studies
-  - EKC
-license: "CC-BY-SA-4.0"
-license-url: "https://creativecommons.org/licenses/by-sa/4.0/"
 repository-code: "https://github.com/dongshins/ekcd-ontology"
-repository-artifact: "https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.7"
-url: "https://dongshins.github.io/ekcd-ontology/"
-references:
-  - type: software
-    title: "EKC Data Model Ontology in OWL/Turtle"
-    authors:
-      - family-names: "SEO"
-        given-names: "Dong Shin"
-    repository-code: "https://github.com/dongshins/EKC_ontology"
+url: "http://dh.aks.ac.kr/ontologies/ekcd"
+keywords:
+  - "EKCD"
+  - "EKC"
+  - "ontology"
+  - "OWL"
+  - "RDF"
+  - "Turtle"
+  - "Korean cultural heritage"
+  - "digital humanities"

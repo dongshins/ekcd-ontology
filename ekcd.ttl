@@ -1,4 +1,4 @@
-﻿@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix ekc: <http://dh.aks.ac.kr/ontologies/ekc#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,40 +14,48 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://dh.aks.ac.kr/ontologies/ekc#> .
 
-<http://dh.aks.ac.kr/ontologies/ekcd> rdf:type owl:Ontology ,
-                                                                            voaf:Vocabulary ;
+<http://dh.aks.ac.kr/ontologies/ekcd> rdf:type owl:Ontology ;
                                        owl:versionIRI <http://dh.aks.ac.kr/ontologies/ekcd_v1> ;
                                        owl:imports <http://dh.aks.ac.kr/ontologies/ekc-2025> ;
-                                       vann:preferredNamespacePrefix "ekcd" ;
-                                       vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#" ;
+                                       ekcd:authoringPolicy "EKCD TBox files and related ABox data do not use @base declarations, the empty prefix ':', or relative IRIs such as <#...>, <...>, and <>. EKC and EKCD resources must be explicitly written with the ekc: or ekcd: prefixed names."@en ,
+                                                            "EKCD TBox 및 관련 ABox 데이터에서는 @base 선언, empty prefix ':', 상대 IRI(<#...>, <...>, <>)를 사용하지 않도록 합니다. EKC 및 EKCD 자원은 반드시 ekc: 또는 ekcd: prefixed name으로 명시하도록 합니다."@ko ;
                                        dc:creator <https://orcid.org/0009-0007-4477-6547> ,
                                                   "Dong Shin SEO"@en ,
                                                   "서동신"@ko ;
                                        dc:description "A derivative ontology extending the EKC line for Korean cultural heritage knowledge modeling, providing additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions."@en ,
-                                                      "한국 문화유산 지식 모델링을 위해 EKC 계열을 확장한 파생 온톨로지로서, 날짜 및 URL 관련 데이터형 속성을 보완하고 시맨틱 매핑 표준 속성의 로컬 적용 지침과 프로젝트 수준의 의미론적 확장을 제공합니다."@ko ;
+                                                      "한국 문화유산 지식 모델링을 위해 EKC 계열을 확장한 파생 온톨로지로서, 날짜 및 URL 관련 datatype properties를 보완하고 표준 시맨틱 매핑 properties의 로컬 적용 지침과 프로젝트 수준의 semantic 확장을 제공합니다."@ko ;
                                        dc:publisher "The Center for Digital Humanities at the Academy of Korean Studies"@en ,
                                                     "한국학중앙연구원 디지털인문학연구소"@ko ;
                                        dc:title "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling"@en ,
                                                 "EKCD: 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지"@ko ;
                                        dcterms:issued "2026-04-17"^^xsd:date ;
                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-                                       dcterms:modified "2026-05-07"^^xsd:date ;
+                                       dcterms:modified "2026-05-08"^^xsd:date ;
                                        dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekc-2022-alpha2507> ;
-                                       dcterms:source <https://github.com/dongshins/EKC_ontology> ;
-                                       rdfs:comment "The EKC Ontology is a domain-specific vocabulary for modeling relationships among historical facts, source documents, persons, and locations in Korean cultural heritage. Initially developed during the Encyclopedic Archives of Korean Culture digitization project at the Academy of Korean Studies and refined through various digital humanities projects."@en ;
+                                       dcterms:source <http://dh.aks.ac.kr/ontologies/ekc> ;
+                                       vann:preferredNamespacePrefix "ekcd" ;
+                                       vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#" ;
                                        rdfs:seeAlso <https://github.com/dongshins/ekcd-ontology> ,
+                                                    <http://dh.aks.ac.kr/ontologies/ekc> ,
                                                     "https://dh.aks.ac.kr/~hanyang2/wiki/index.php/Ontology:EKC_2022" ,
                                                     "https://github.com/dongshins/EKC_ontology" ,
                                                     "https://github.com/dongshins/EKC_ontology_advanced" ;
                                        owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekc-2022-alpha2507> ;
-                                       owl:versionInfo "EKCD v1.0.7"@en ;
+                                       owl:versionInfo "EKCD v1.0.8"@en ;
                                        dcat:contactPoint <https://github.com/dongshins> .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://dh.aks.ac.kr/ontologies/ekcd#authoringPolicy
+ekcd:authoringPolicy rdf:type owl:AnnotationProperty ;
+                     rdfs:comment "An annotation property used to describe local authoring and serialization policies for EKCD TBox and related ABox data."@en ,
+                                  "EKCD TBox 및 관련 ABox 데이터의 로컬 작성 및 직렬화 원칙을 기술하기 위한 annotation property입니다."@ko ;
+                     rdfs:label "authoring policy"@en ,
+                                "작성 원칙"@ko .
+
 
 ###  http://purl.org/dc/elements/1.1/contributor
 dc:contributor rdf:type owl:AnnotationProperty .
@@ -90,6 +98,14 @@ dcterms:source rdf:type owl:AnnotationProperty ;
                dc:description "This property is intended to be used with non-literal values. The described resource may be derived from the related resource in whole or in part. Best practice is to identify the related resource by means of a URI or a string conforming to a formal identification system."@en ;
                rdfs:label "source"@en ;
                skos:definition "A related resource from which the described resource is derived."@en .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2002/07/owl#versionIRI
@@ -331,6 +347,11 @@ voaf:Vocabulary rdf:type owl:Class .
 ###  http://dh.aks.ac.kr/ontologies/ekc
 <http://dh.aks.ac.kr/ontologies/ekc> rdf:type owl:NamedIndividual ;
                                      dcterms:publisher <https://dh.aks.ac.kr/> .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekcd
+<http://dh.aks.ac.kr/ontologies/ekcd> rdf:type owl:NamedIndividual ,
+                                               voaf:Vocabulary .
 
 
 ###  http://dh.aks.ac.kr/ontologies/ekc#
