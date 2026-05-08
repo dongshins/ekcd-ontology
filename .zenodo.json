@@ -29,17 +29,17 @@
     {
       "identifier": "https://github.com/dongshins/ekcd-ontology",
       "relation": "isSupplementTo",
-      "scheme": "url"
+      "resource_type": "software"
     },
     {
       "identifier": "http://dh.aks.ac.kr/ontologies/ekcd",
       "relation": "isIdenticalTo",
-      "scheme": "url"
+      "resource_type": "software"
     },
     {
       "identifier": "http://dh.aks.ac.kr/ontologies/ekc",
       "relation": "isDerivedFrom",
-      "scheme": "url"
+      "resource_type": "software"
     }
   ],
   "notes": "This release preserves the v1.0.7 class, object property, and EKCD-local datatype property sets. It adds ontology-level authoring policy metadata and explicit annotation property declarations."
