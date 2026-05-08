@@ -108,7 +108,15 @@ See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.0.8
 
 ## Citation
 
-Please cite this ontology using the metadata in [`CITATION.cff`](CITATION.cff). If using a Zenodo archive, cite the DOI assigned to the specific archived version.
+If you use EKCD v1.0.8, please cite the version-specific Zenodo record: 
+(EKCD v1.0.8을 사용한 연구에서는 재현성을 위해 다음의 version-specific DOI를 인용해 주세요. @ko)
+
+> SEO, Dong Shin. (2026). *EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling* (v1.0.8). Zenodo. https://doi.org/10.5281/zenodo.20078236
+
+For citing the EKCD ontology as an evolving project across versions, use the concept DOI:
+(EKCD 온톨로지 전체 버전 계열을 포괄적으로 가리킬 때는 다음 concept DOI를 사용할 수 있습니다. @ko)
+
+> https://doi.org/10.5281/zenodo.19753664
 
 ## Maintainer
 
