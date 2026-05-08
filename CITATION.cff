@@ -3,15 +3,15 @@ message: "If you use the EKCD Ontology, please cite this release using the metad
 title: "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling"
 abstract: "EKCD is an EKC-derived ontology for Korean cultural heritage knowledge modeling. It provides project-level semantic extensions, local semantic mapping guidance, and datatype properties for date and URL modeling."
 version: "1.0.8"
+doi: "10.5281/zenodo.20078236"
 date-released: "2026-05-08"
 license: "CC-BY-SA-4.0"
 authors:
   - family-names: "SEO"
     given-names: "Dong Shin"
-    name-particle: ""
     orcid: "https://orcid.org/0009-0007-4477-6547"
 repository-code: "https://github.com/dongshins/ekcd-ontology"
-url: "http://dh.aks.ac.kr/ontologies/ekcd"
+url: "https://doi.org/10.5281/zenodo.20078236"
 keywords:
   - "EKCD"
   - "EKC"
@@ -21,3 +21,10 @@ keywords:
   - "Turtle"
   - "Korean cultural heritage"
   - "digital humanities"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19753664"
+    description: "Concept DOI for all EKCD ontology versions"
+  - type: doi
+    value: "10.5281/zenodo.20078236"
+    description: "Version DOI for EKCD ontology v1.0.8"
