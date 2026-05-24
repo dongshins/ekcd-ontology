@@ -130,7 +130,7 @@ EKCD imports and derives from the EKC ontology line. The EKC Vocabulary Contribu
   - [Dong Shin SEO / 서동신@ko](https://orcid.org/0009-0007-4477-6547)
 
 - **EKCD contributor**
-  - [Su-jeong PARK / 박수정@ko](https://orcid.org/0009-0007-4477-6547)
+  - [Su-jeong PARK / 박수정@ko](https://orcid.org/0009-0008-1531-1238)
 
 - **Source/imported ontology credit**
   - [EKC Vocabulary Contributor Group](https://github.com/dongshins/EKC_ontology/blob/main/CONTRIBUTORS.md)
