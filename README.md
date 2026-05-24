@@ -120,6 +120,21 @@ For citing the EKCD ontology as an evolving project across versions, use the con
 
 > https://doi.org/10.5281/zenodo.19753664
 
+## Credits
+
+EKCD was created by Dong Shin SEO as an EKC-derived ontology for Korean cultural heritage knowledge modeling. Su-jeong PARK contributed to the improvement of EKCD.
+
+EKCD imports and derives from the EKC ontology line. The EKC Vocabulary Contributor Group is therefore acknowledged here as the contributor group for the source/imported EKC vocabulary, not as a statement that all members of the group directly contributed to EKCD. Among members of the EKC Vocabulary Contributor Group, direct EKCD work has been carried out by Dong Shin SEO and Su-jeong PARK.
+
+- **EKCD creator**
+  - Dong Shin SEO / 서동신
+
+- **EKCD contributor**
+  - Su-jeong PARK / 박수정
+
+- **Source/imported ontology credit**
+  - EKC Vocabulary Contributor Group
+
 ## Maintainer
 
 - Dong Shin SEO / 서동신
