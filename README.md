@@ -127,16 +127,16 @@ EKCD was created by Dong Shin SEO as an EKC-derived ontology for Korean cultural
 EKCD imports and derives from the EKC ontology line. The EKC Vocabulary Contributor Group is therefore acknowledged here as the contributor group for the source/imported EKC vocabulary, not as a statement that all members of the group directly contributed to EKCD. Among members of the EKC Vocabulary Contributor Group, direct EKCD work has been carried out by Dong Shin SEO and Su-jeong PARK.
 
 - **EKCD creator**
-  - Dong Shin SEO / 서동신
+  - Dong Shin SEO / 서동신@ko
 
 - **EKCD contributor**
-  - Su-jeong PARK / 박수정
+  - Su-jeong PARK / 박수정@ko
 
 - **Source/imported ontology credit**
-  - EKC Vocabulary Contributor Group
+  - [EKC Vocabulary Contributor Group](https://github.com/dongshins/EKC_ontology/blob/main/CONTRIBUTORS.md)
 
 ## Maintainer
 
-- Dong Shin SEO / 서동신
+- Dong Shin SEO / 서동신@ko
 - ORCID: `0009-0007-4477-6547`
 - Contact point: `https://github.com/dongshins`
