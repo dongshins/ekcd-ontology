@@ -4,10 +4,11 @@ message: >-
 type: software
 title: "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling"
 version: "v1.1.2"
+doi: "10.5281/zenodo.20379676"
 date-released: 2026-05-25
 license: "CC-BY-SA-4.0"
 repository-code: "https://github.com/dongshins/ekcd-ontology"
-url: "https://github.com/dongshins/ekcd-ontology"
+url: "https://doi.org/10.5281/zenodo.20379676"
 authors:
   - family-names: "SEO"
     given-names: "Dong Shin"
@@ -28,5 +29,12 @@ keywords:
   - digital humanities
   - Korean studies
   - cultural heritage
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19753664"
+    description: "Concept DOI for all EKCD ontology versions"
+  - type: doi
+    value: "10.5281/zenodo.20379676"
+    description: "Version DOI for EKCD ontology v1.1.2"
 abstract: >-
   EKCD is an EKC-derived ontology in OWL/Turtle for extensible Korean cultural heritage knowledge modeling. It is designed as a derivative ontology line that builds on the EKC core ontology while providing extended local guidance for semantic mapping, date-oriented modeling, interpretive assertions, confidence-level representation, evidence tracking, and utterance modeling.
