@@ -158,6 +158,6 @@ EKCD imports and derives from the EKC ontology line. The EKC Vocabulary Contribu
 
 ## Maintainer
 
-- Dong Shin SEO / 서동신@ko
+- Dong Shin SEO / 서동신 @ko
 - ORCID: `0009-0007-4477-6547`
 - Contact point: `https://github.com/dongshins`
