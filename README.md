@@ -3,9 +3,9 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753664.svg)](https://doi.org/10.5281/zenodo.19753664)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-**EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, and local guidance for semantic mapping properties.
+**EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, local guidance for semantic mapping properties, and project-level extensions for interpretive assertions, evidence tracking, confidence levels, and utterance modeling.
 
-- Current release: **v1.0.8**
+- Current release: **v1.1.2**
 - Ontology IRI: `http://dh.aks.ac.kr/ontologies/ekcd`
 - Version IRI: `http://dh.aks.ac.kr/ontologies/ekcd_v1`
 - Preferred prefix: `ekcd`
@@ -16,17 +16,18 @@
 
 ## Overview
 
-EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. The ontology is intentionally small and conservative: v1.0.8 preserves the v1.0.7 class, object property, and datatype property sets while clarifying ontology metadata and serialization policy.
+EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. Version 1.1.2 preserves the v1.0.8 date, URL, namespace, and semantic mapping guidance while adding a small set of classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling.
 
 The ontology currently includes:
 
-| Category | Count in v1.0.8 | Notes |
+| Category | Count in v1.1.2 | Notes |
 |---|---:|---|
-| OWL classes | 3 | Includes `ekc:3D_모델`, `ekc:3D_지도`, and `voaf:Vocabulary` declarations. |
-| OWL object properties | 25 | Reuses selected DCMI Terms, EDM, FOAF, OWL, and SKOS properties for EKCD modeling. |
-| OWL datatype properties | 5 | Adds EKCD-local properties for access URLs and date modeling. |
-| OWL annotation properties | 19 | Adds explicit declarations for EKCD and VANN annotation properties. |
-| OWL named individuals | 4 | Includes EKC/EKCD ontology resources and the DH-AKS organization resource. |
+| OWL classes | 11 | Adds EKCD classes for interpretive assertions, confidence levels, and utterance modeling, while retaining `ekc:3D_모델`, `ekc:3D_지도`, `voaf:Vocabulary`, `skos:Concept`, and `prov:Entity` declarations. |
+| OWL object properties | 36 | Adds EKCD-local properties for interpretive assertions, correspondence, contextual relation, evidence derivation, confidence, and utterance modeling. |
+| OWL datatype properties | 8 | Adds EKCD-local properties for access URLs, date modeling, evidence notes, evidence locations, and utterance text. |
+| OWL annotation properties | 19 | Retains explicit declarations for EKCD and VANN annotation properties. |
+| OWL named individuals | 7 | Includes EKC/EKCD ontology resources, the DH-AKS organization resource, and interpretive confidence values. |
+| SKOS concepts | 3 | Includes `ekcd:Direct`, `ekcd:Probable`, and `ekcd:Contextual` as controlled confidence values. |
 
 ## Namespace policy
 
@@ -46,6 +47,7 @@ Recommended prefixes:
 @prefix edm:   <http://www.europeana.eu/schemas/edm/> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -61,6 +63,9 @@ Recommended prefixes:
 | `ekcd:startDate` | `xsd:date` | Normalized start date of a period event. |
 | `ekcd:endDate` | `xsd:date` | Normalized end date of a period event. |
 | `ekcd:originalDate` | `rdfs:Literal` | Original date expression as attested in source materials, such as lunar-calendar or historically phrased dates. |
+| `ekcd:evidenceLocation` | `rdfs:Literal` | Textual indication of the location of evidence, such as a folio, page, section, scene title, article date, or database entry. |
+| `ekcd:evidenceNote` | `rdfs:Literal` | Note explaining how the cited evidence supports an interpretive assertion. |
+| `ekcd:utteranceText` | `rdfs:Literal` | Quoted, transcribed, or summarized text of an utterance. |
 
 ## Date modeling
 
@@ -91,28 +96,44 @@ ekcd:SomeImageResource
     ekcd:accessURL "https://example.org/image.jpg"^^xsd:anyURI .
 ```
 
+## Interpretive assertion and utterance modeling
+
+Version 1.1.2 adds a compact modeling layer for cases where cultural heritage data requires interpretive statements rather than strict identity claims. `ekcd:InterpretiveAssertion` can be used to record the subject, predicate, object, evidence, and confidence level of an interpreted relation.
+
+For utterance-centered historical modeling, EKCD adds `ekcd:Utterance` and its subclasses `ekcd:RoyalUtterance`, `ekcd:RoyalCommand`, and `ekcd:RetrospectiveUtterance`. These classes support the modeling of recorded statements, commands, declarations, and retrospective framings as event-like units in historical knowledge graphs.
+
+| Modeling need | Main EKCD terms |
+|---|---|
+| Interpretive assertion | `ekcd:InterpretiveAssertion`, `ekcd:assertsSubject`, `ekcd:assertsPredicate`, `ekcd:assertsObject` |
+| Evidence and confidence | `prov:wasDerivedFrom`, `ekcd:evidenceLocation`, `ekcd:evidenceNote`, `ekcd:hasInterpretiveConfidence` |
+| Confidence values | `ekcd:Direct`, `ekcd:Probable`, `ekcd:Contextual` |
+| Utterance modeling | `ekcd:Utterance`, `ekcd:RoyalUtterance`, `ekcd:RoyalCommand`, `ekcd:RetrospectiveUtterance` |
+| Utterance relations | `ekcd:hasSpeaker`, `ekcd:utteranceAbout`, `ekcd:isUtteranceRecordedIn`, `ekcd:retrospectivelyFrames`, `ekcd:utteranceText` |
+
 ## Semantic mapping guidance
 
-EKCD distinguishes strict identity from conceptual or vocabulary mapping:
+EKCD distinguishes strict identity from conceptual, contextual, or vocabulary mapping:
 
 | Property | EKCD usage |
 |---|---|
 | `owl:sameAs` | Use only when two URIs denote the same individual/resource. Do not use for mere similarity, cross-reference, or concept mapping. |
+| `ekcd:correspondsTo` | Use when two resources are interpreted as corresponding to each other, without asserting strict identity. |
+| `ekcd:contextuallyRelatedTo` | Use when two resources are associated through historical, textual, visual, or interpretive context, without asserting direct correspondence. |
 | `skos:exactMatch` | Use for precise mapping between concepts in different concept schemes. It is not identical to OWL-level identity. |
 | `skos:closeMatch` | Use for close but not fully identical concept mapping. |
 | `skos:mappingRelation` | Super-property for mapping relations between different concept schemes. |
 
 ## Release history
 
-See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.0.8-ontology-revision.md`](docs/changes/v1.0.8-ontology-revision.md) for the detailed v1.0.8 ontology revision note.
+See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.1.2-ontology-revision.md`](docs/changes/v1.1.2-ontology-revision.md) for the detailed v1.1.2 ontology revision note.
 
 ## Citation
 
-If you use EKCD v1.0.8, please cite the version-specific Zenodo record: 
+If you use EKCD v1.1.2, please cite the version-specific Zenodo record once the v1.1.2 DOI has been assigned:
 
-(EKCD v1.0.8을 사용한 연구에서는 재현성을 위해 다음의 version-specific DOI를 인용해 주세요. @ko)
+(EKCD v1.1.2를 사용한 연구에서는 재현성을 위해 v1.1.2의 version-specific DOI를 인용해 주세요. DOI 발급 후 아래 항목을 갱신합니다. @ko)
 
-> SEO, Dong Shin. (2026). *EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling* (v1.0.8). Zenodo. https://doi.org/10.5281/zenodo.20078236
+> SEO, Dong Shin. (2026). *EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling* (v1.1.2). Zenodo. DOI to be added after release.
 
 For citing the EKCD ontology as an evolving project across versions, use the concept DOI:
 
