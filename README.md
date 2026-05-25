@@ -129,11 +129,11 @@ See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.1.2
 
 ## Citation
 
-If you use EKCD v1.1.2, please cite the version-specific Zenodo record once the v1.1.2 DOI has been assigned:
+If you use EKCD v1.1.2, please cite the version-specific Zenodo record:
 
-(EKCD v1.1.2를 사용한 연구에서는 재현성을 위해 v1.1.2의 version-specific DOI를 인용해 주세요. DOI 발급 후 아래 항목을 갱신합니다. @ko)
+(EKCD v1.1.2를 사용한 연구에서는 재현성을 위해 다음의 version-specific DOI를 인용해 주세요. @ko)
 
-> SEO, Dong Shin. (2026). *EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling* (v1.1.2). Zenodo. DOI to be added after release.
+> SEO, Dong Shin. (2026). *EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling* (v1.1.2). Zenodo. https://doi.org/10.5281/zenodo.20379676.
 
 For citing the EKCD ontology as an evolving project across versions, use the concept DOI:
 
