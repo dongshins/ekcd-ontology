@@ -8,7 +8,7 @@ The project follows a conservative semantic-versioning practice for ontology rel
 
 ## [v1.1.2] - 2026-05-25
 
-**Zenodo DOI:** TBD after release
+**Zenodo DOI:** https://doi.org/10.5281/zenodo.20379676
 
 ### Added
 
@@ -196,6 +196,7 @@ Triple-level comparison: 10 triples added and 7 triples removed.
 - Included local usage guidance for selected standard mapping and web-resource predicates, including `owl:sameAs`, `skos:exactMatch`, `skos:closeMatch`, `skos:mappingRelation`, `edm:isShownAt`, and `edm:isShownBy`.
 
 [v1.1.2]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.1.2
+[v1.1.2 DOI]: https://doi.org/10.5281/zenodo.20379676
 [v1.0.8]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.8
 [v1.0.8 DOI]: https://doi.org/10.5281/zenodo.20078236
 [v1.0.7]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.7
