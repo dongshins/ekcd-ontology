@@ -4,7 +4,77 @@ All notable changes to the EKCD ontology release line are documented in this fil
 
 The format follows a practical Keep-a-Changelog style, and version numbers follow the GitHub/Zenodo release tags used for the ontology snapshots.
 
-The project follows a conservative semantic-versioning practice for ontology releases. Patch releases may include metadata clarification, documentation improvement, local authoring-policy clarification, and non-breaking vocabulary declarations.
+The project follows a conservative semantic-versioning practice for ontology releases. Patch releases may include metadata clarification, documentation improvement, local authoring-policy clarification, and non-breaking vocabulary declarations. Minor releases may include non-breaking vocabulary expansion.
+
+## [v1.1.2] - 2026-05-25
+
+**Zenodo DOI:** TBD after release
+
+### Added
+
+- Added classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling in historical knowledge graphs.
+- Added EKCD-local classes for interpretive and utterance modeling:
+  - `ekcd:InterpretiveAssertion`
+  - `ekcd:InterpretiveConfidenceLevel`
+  - `ekcd:Utterance`
+  - `ekcd:RoyalUtterance`
+  - `ekcd:RoyalCommand`
+  - `ekcd:RetrospectiveUtterance`
+- Added object properties for interpretive assertion modeling:
+  - `ekcd:assertsSubject`
+  - `ekcd:assertsPredicate`
+  - `ekcd:assertsObject`
+  - `ekcd:hasInterpretiveConfidence`
+- Added object properties for correspondence and contextual association:
+  - `ekcd:correspondsTo`
+  - `ekcd:contextuallyRelatedTo`
+- Added object properties for utterance modeling:
+  - `ekcd:hasSpeaker`
+  - `ekcd:isUtteranceRecordedIn`
+  - `ekcd:utteranceAbout`
+  - `ekcd:retrospectivelyFrames`
+- Added datatype properties for evidence and utterance documentation:
+  - `ekcd:evidenceLocation`
+  - `ekcd:evidenceNote`
+  - `ekcd:utteranceText`
+- Added controlled confidence-level individuals:
+  - `ekcd:Direct`
+  - `ekcd:Probable`
+  - `ekcd:Contextual`
+- Added `dc:contributor` metadata for Su-jeong PARK / 박수정, including ORCID reference.
+
+### Changed
+
+- Updated `owl:versionInfo` from `EKCD v1.0.8` to `EKCD v1.1.2`.
+- Updated `dcterms:modified` from `2026-05-08` to `2026-05-25`.
+- Updated `owl:priorVersion` and `dcterms:replaces` to point to the preceding EKCD release file, `http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl`.
+- Expanded ontology-level descriptions to record the v1.1.x feature family for interpretive assertions, confidence levels, evidence tracking, and utterance modeling.
+
+### Removed
+
+- No v1.0.8 vocabulary term declarations were removed.
+- Removed only the replaced ontology-version metadata values for `owl:versionInfo`, `dcterms:modified`, `owl:priorVersion`, and `dcterms:replaces`.
+
+### Compatibility
+
+- Existing v1.0.8 classes, object properties, EKCD-local datatype properties, and annotation properties remain compatible.
+- Existing ABox data using v1.0.8 vocabulary terms should remain compatible with v1.1.2.
+- v1.1.2 should be treated as a non-breaking vocabulary-expansion release.
+- Recommended maintenance action: use the new interpretive-assertion, confidence-level, evidence-tracking, and utterance-modeling terms when modeling correspondence, contextual association, source evidence, and recorded utterances.
+
+### Diff summary against v1.0.8
+
+| Metric | v1.0.8 | v1.1.2 | Change |
+|---|---:|---:|---:|
+| RDF triples | 151 | 321 | +170 |
+| Added triples | — | 174 | +174 |
+| Removed triples | — | 4 | -4 |
+| OWL classes | 3 | 11 | +8 |
+| OWL object properties | 25 | 36 | +11 |
+| OWL datatype properties | 5 | 8 | +3 |
+| OWL annotation properties | 19 | 19 | 0 |
+| OWL named individuals | 4 | 7 | +3 |
+| SKOS concepts | 0 | 3 | +3 |
 
 ## [v1.0.8] - 2026-05-08
 
@@ -125,7 +195,8 @@ Triple-level comparison: 10 triples added and 7 triples removed.
   - `ekcd:accessURL`
 - Included local usage guidance for selected standard mapping and web-resource predicates, including `owl:sameAs`, `skos:exactMatch`, `skos:closeMatch`, `skos:mappingRelation`, `edm:isShownAt`, and `edm:isShownBy`.
 
-[1.0.8]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.8
+[v1.1.2]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.1.2
+[v1.0.8]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.8
 [v1.0.8 DOI]: https://doi.org/10.5281/zenodo.20078236
-[1.0.7]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.7
+[v1.0.7]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.7
 [1.0.4]: https://github.com/dongshins/ekcd-ontology/releases/tag/v1.0.4
