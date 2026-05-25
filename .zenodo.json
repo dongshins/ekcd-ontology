@@ -1,7 +1,8 @@
 {
   "title": "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling",
-  "upload_type": "software",
-  "description": "EKCD is an EKC-derived ontology for Korean cultural heritage knowledge modeling. Version 1.0.8 is a non-breaking maintenance release that clarifies ontology metadata, adds an explicit authoring policy for Turtle serialization, and aligns the ontology source relation with the canonical EKC ontology IRI.",
+  "version": "1.1.2",
+  "publication_date": "2026-05-25",
+  "description": "EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage knowledge modeling. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions while preserving conceptual continuity with the EKC ontology line. Version 1.1.2 extends the ontology with classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling while preserving compatibility with v1.0.8 term usage.",
   "creators": [
     {
       "name": "SEO, Dong Shin",
@@ -18,37 +19,33 @@
       "type": "Researcher"
     }
   ],
-  "version": "1.0.8",
-  "publication_date": "2026-05-08",
-  "license": "cc-by-sa-4.0",
   "access_right": "open",
+  "license": "cc-by-sa-4.0",
+  "upload_type": "software",
   "keywords": [
-    "EKCD",
-    "EKC",
     "ontology",
     "OWL",
     "RDF",
     "Turtle",
-    "Korean cultural heritage",
+    "linked data",
+    "semantic web",
     "digital humanities",
-    "semantic web"
+    "Korean cultural heritage",
+    "Korean studies",
+    "EKC",
+    "EKCD"
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/dongshins/ekcd-ontology",
-      "relation": "isSupplementTo",
-      "resource_type": "software"
-    },
-    {
-      "identifier": "http://dh.aks.ac.kr/ontologies/ekcd",
-      "relation": "isIdenticalTo",
-      "resource_type": "software"
-    },
-    {
-      "identifier": "http://dh.aks.ac.kr/ontologies/ekc",
+      "identifier": "https://github.com/dongshins/EKC_ontology",
       "relation": "isDerivedFrom",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/dongshins/ekcd-ontology/tree/v1.1.2",
+      "relation": "isSupplementTo",
       "resource_type": "software"
     }
   ],
-  "notes": "This release preserves the v1.0.7 class, object property, and EKCD-local datatype property sets. It adds ontology-level authoring policy metadata and explicit annotation property declarations. EKCD imports and derives from the EKC ontology line. The EKC Vocabulary Contributor Group is acknowledged for its contribution to the source/imported EKC vocabulary; this acknowledgement does not imply that all members of the group directly contributed to EKCD. Among members of the EKC Vocabulary Contributor Group, direct EKCD work has been carried out by Dong Shin SEO and Su-jeong PARK."
+  "notes": "EKCD imports and derives from the EKC ontology line. The EKC Vocabulary Contributor Group is acknowledged for its contribution to the source/imported EKC vocabulary; this acknowledgement does not imply that all members of the group directly contributed to EKCD. Among members of the EKC Vocabulary Contributor Group, direct EKCD work has been carried out by Dong Shin SEO and Su-jeong PARK."
 }
