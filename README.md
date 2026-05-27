@@ -5,6 +5,8 @@
 
 **EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, local guidance for semantic mapping properties, and project-level extensions for interpretive assertions, evidence tracking, confidence levels, and utterance modeling.
 
+**EKCD**는 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지이다. EKC 온톨로지 계열을 바탕으로, 프로젝트 수준의 모델링 관례, 날짜 및 URL 관련 datatype property, 시맨틱 매핑 property의 로컬 적용 지침, 그리고 해석적 진술, 근거 추적, 신뢰도 수준, 발화 모델링을 위한 프로젝트 수준의 확장을 제공한다. @ko 
+
 - Current release: **v1.1.2**
 - Ontology IRI: `http://dh.aks.ac.kr/ontologies/ekcd`
 - Version IRI: `http://dh.aks.ac.kr/ontologies/ekcd_v1`
@@ -17,6 +19,8 @@
 ## Overview
 
 EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. Version 1.1.2 preserves the v1.0.8 date, URL, namespace, and semantic mapping guidance while adding a small set of classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling.
+
+EKCD는 EKC 온톨로지 계열에서 파생되었거나 그와 정렬된 한국 문화유산 데이터의 RDF/OWL 모델링을 지원한다. Version 1.1.2는 v1.0.8의 날짜, URL, namespace, 시맨틱 매핑 지침을 유지하면서, 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 소수의 class와 property를 추가하였다.
 
 The ontology currently includes:
 
