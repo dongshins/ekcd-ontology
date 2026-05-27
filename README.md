@@ -20,7 +20,7 @@
 
 EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. Version 1.1.2 preserves the v1.0.8 date, URL, namespace, and semantic mapping guidance while adding a small set of classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling.
 
-EKCD는 EKC 온톨로지 계열에서 파생되었거나 그와 정렬된 한국 문화유산 데이터의 RDF/OWL 모델링을 지원합니다. Version 1.1.2는 v1.0.8의 날짜, URL, namespace, 시맨틱 매핑 지침을 유지하면서, 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 소수의 class와 property를 추가하였습니다.
+EKCD는 EKC 온톨로지 계열에서 파생된 한국 문화유산 데이터의 RDF/OWL 모델링을 지원합니다. Version 1.1.2는 v1.0.8의 날짜, URL, namespace, 시맨틱 매핑 지침을 유지하면서, 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 소수의 class와 property를 추가하였습니다.
 
 The ontology currently includes:
 
