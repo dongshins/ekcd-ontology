@@ -1,4 +1,4 @@
-﻿@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix ekc: <http://dh.aks.ac.kr/ontologies/ekc#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
