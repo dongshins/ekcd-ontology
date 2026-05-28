@@ -15,6 +15,7 @@
 - Imported ontology: `http://dh.aks.ac.kr/ontologies/ekc-2025`
 - Source ontology: `http://dh.aks.ac.kr/ontologies/ekc`
 - License: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+- LOV Registration: [EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling (ekcd)](https://lov.linkeddata.es/dataset/lov/vocabs/ekcd) 
 
 ## Overview
 
