@@ -30,15 +30,17 @@
                                        dc:description "A derivative ontology extending the EKC line for Korean cultural heritage knowledge modeling, providing additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions."@en ,
                                                       "한국 문화유산 지식 모델링을 위해 EKC 계열을 확장한 파생 온톨로지로서, 날짜 및 URL 관련 datatype properties를 보완하고 표준 시맨틱 매핑 properties의 로컬 적용 지침과 프로젝트 수준의 semantic 확장을 제공합니다."@ko ,
                                                       "Version 1.1.0 adds classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling in historical knowledge graphs."@en ,
-                                                      "버전 1.1.0은 역사 지식그래프에서 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 클래스와 속성을 추가합니다."@ko ;
-                                       dc:publisher "The Center for Digital Humanities at the Academy of Korean Studies"@en ,
+                                                      "Version 1.1.4 adds viewpoint-relative spatial properties for modeling seating arrangements, sight lines, focal positions, and visual hierarchy in historical ritual spaces."@en ,
+                                                      "버전 1.1.0은 역사 지식그래프에서 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 클래스와 속성을 추가합니다."@ko ,
+                                                      "버전 1.1.4는 역사 의례 공간의 좌석 배치, 시선축, 중심 위치, 시각 위계를 모델링하기 위한 기준 시점 상대 공간 properties를 추가합니다."@ko ;
+                                       dc:publisher "The Center for Digital Humanities, Academy of Korean Studies"@en ,
                                                     "한국학중앙연구원 디지털인문학연구소"@ko ;
                                        dc:title "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling"@en ,
                                                 "EKCD: 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지"@ko ;
                                        dcterms:issued "2026-04-17"^^xsd:date ;
                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-                                       dcterms:modified "2026-05-25"^^xsd:date ;
-                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
+                                       dcterms:modified "2026-05-30"^^xsd:date ;
+                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
                                        dcterms:source <http://dh.aks.ac.kr/ontologies/ekc> ;
                                        vann:preferredNamespacePrefix "ekcd" ;
                                        vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#" ;
@@ -47,8 +49,8 @@
                                                     "https://dh.aks.ac.kr/~hanyang2/wiki/index.php/Ontology:EKC_2022" ,
                                                     "https://github.com/dongshins/EKC_ontology" ,
                                                     "https://github.com/dongshins/EKC_ontology_advanced" ;
-                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
-                                       owl:versionInfo "EKCD v1.1.2"@en ;
+                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
+                                       owl:versionInfo "EKCD v1.1.4"@en ;
                                        dcat:contactPoint <https://github.com/dongshins> .
 
 #################################################################
@@ -57,7 +59,7 @@
 
 ###  http://dh.aks.ac.kr/ontologies/ekcd#authoringPolicy
 ekcd:authoringPolicy rdf:type owl:AnnotationProperty ;
-                     rdfs:comment "An annotation property used to describe local authoring and serialization policies for EKCD TBox and related ABox data."@en ,
+                     dc:description "An annotation property used to describe local authoring and serialization policies for EKCD TBox and related ABox data."@en ,
                                   "EKCD TBox 및 관련 ABox 데이터의 로컬 작성 및 직렬화 원칙을 기술하기 위한 annotation property입니다."@ko ;
                      rdfs:label "authoring policy"@en ,
                                 "작성 원칙"@ko .
@@ -291,8 +293,8 @@ prov:wasDerivedFrom
     rdf:type owl:ObjectProperty ;
     rdfs:label "was derived from"@en ;
     rdfs:label "근거 자료에서 도출됨"@ko ;
-    rdfs:comment "Relates an interpretive assertion or modeled resource to the source resource from which it was derived."@en ;
-    rdfs:comment "해석적 진술이나 모델링된 자원을 그것이 도출된 근거 자료와 연결합니다."@ko .
+    dc:description "Relates an interpretive assertion or modeled resource to the source resource from which it was derived."@en ;
+    dc:description "해석적 진술이나 모델링된 자원을 그것이 도출된 근거 자료와 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#assertsSubject
 ekcd:assertsSubject
@@ -301,8 +303,8 @@ ekcd:assertsSubject
     rdfs:range owl:Thing ;
     rdfs:label "asserts subject"@en ;
     rdfs:label "진술 주어"@ko ;
-    rdfs:comment "Relates an interpretive assertion to the subject resource of the asserted relation."@en ;
-    rdfs:comment "해석적 진술을 그 진술이 대상으로 삼는 주어 자원과 연결합니다."@ko .
+    dc:description "Relates an interpretive assertion to the subject resource of the asserted relation."@en ;
+    dc:description "해석적 진술을 그 진술이 대상으로 삼는 주어 자원과 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#assertsPredicate
 ekcd:assertsPredicate
@@ -311,8 +313,8 @@ ekcd:assertsPredicate
     rdfs:range rdf:Property ;
     rdfs:label "asserts predicate"@en ;
     rdfs:label "진술 술어"@ko ;
-    rdfs:comment "Relates an interpretive assertion to the property used as the predicate of the asserted relation."@en ;
-    rdfs:comment "해석적 진술을 그 진술에서 술어로 사용되는 property와 연결합니다."@ko .
+    dc:description "Relates an interpretive assertion to the property used as the predicate of the asserted relation."@en ;
+    dc:description "해석적 진술을 그 진술에서 술어로 사용되는 property와 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#assertsObject
 ekcd:assertsObject
@@ -321,8 +323,8 @@ ekcd:assertsObject
     rdfs:range owl:Thing ;
     rdfs:label "asserts object"@en ;
     rdfs:label "진술 목적어"@ko ;
-    rdfs:comment "Relates an interpretive assertion to the object resource of the asserted relation."@en ;
-    rdfs:comment "해석적 진술을 그 진술이 대상으로 삼는 목적어 자원과 연결합니다."@ko .
+    dc:description "Relates an interpretive assertion to the object resource of the asserted relation."@en ;
+    dc:description "해석적 진술을 그 진술이 대상으로 삼는 목적어 자원과 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#correspondsTo
 ekcd:correspondsTo
@@ -330,8 +332,8 @@ ekcd:correspondsTo
     rdfs:subPropertyOf ekc:CO ;
     rdfs:label "corresponds to"@en ;
     rdfs:label "대응한다"@ko ;
-    rdfs:comment "Relates two resources that are interpreted as corresponding to each other, without asserting strict identity."@en ;
-    rdfs:comment "두 자원이 서로 대응한다고 해석되는 경우에 사용하되, 엄격한 동일성을 주장하지 않습니다."@ko ;
+    dc:description "Relates two resources that are interpreted as corresponding to each other, without asserting strict identity."@en ;
+    dc:description "두 자원이 서로 대응한다고 해석되는 경우에 사용하되, 엄격한 동일성을 주장하지 않습니다."@ko ;
     skos:scopeNote "Use this property for scene-procedure, record-event, or source-unit correspondences. Do not use it as a substitute for owl:sameAs."@en ;
     skos:scopeNote "장면-절차, 기록-사건, 자료 단위 사이의 대응 관계에 사용합니다. owl:sameAs의 대체물로 사용하지 않습니다."@ko .
 
@@ -341,8 +343,8 @@ ekcd:contextuallyRelatedTo
     rdfs:subPropertyOf ekc:mightBeRelatedTo ;
     rdfs:label "contextually related to"@en ;
     rdfs:label "맥락적으로 관련된다"@ko ;
-    rdfs:comment "Relates two resources that are associated through historical, textual, visual, or interpretive context, without asserting direct correspondence."@en ;
-    rdfs:comment "직접 대응을 주장하지 않고, 역사적·문헌적·시각적·해석적 맥락 안에서 관련되는 두 자원을 연결합니다."@ko .
+    dc:description "Relates two resources that are associated through historical, textual, visual, or interpretive context, without asserting direct correspondence."@en ;
+    dc:description "직접 대응을 주장하지 않고, 역사적·문헌적·시각적·해석적 맥락 안에서 관련되는 두 자원을 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#hasInterpretiveConfidence
 ekcd:hasInterpretiveConfidence
@@ -351,8 +353,8 @@ ekcd:hasInterpretiveConfidence
     rdfs:range ekcd:InterpretiveConfidenceLevel ;
     rdfs:label "has interpretive confidence"@en ;
     rdfs:label "해석적 신뢰도를 갖는다"@ko ;
-    rdfs:comment "Relates an interpretive assertion to the confidence level assigned to it."@en ;
-    rdfs:comment "해석적 진술을 그 진술에 부여된 신뢰도 수준과 연결합니다."@ko .
+    dc:description "Relates an interpretive assertion to the confidence level assigned to it."@en ;
+    dc:description "해석적 진술을 그 진술에 부여된 신뢰도 수준과 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#hasSpeaker
 ekcd:hasSpeaker
@@ -361,8 +363,8 @@ ekcd:hasSpeaker
     rdfs:range ekc:Actor ;
     rdfs:label "has speaker"@en ;
     rdfs:label "발화자를 갖는다"@ko ;
-    rdfs:comment "Relates an utterance to the actor who made or is represented as making the utterance."@en ;
-    rdfs:comment "발화를 그 발화를 한 행위자 또는 발화자로 기록된 행위자와 연결합니다."@ko .
+    dc:description "Relates an utterance to the actor who made or is represented as making the utterance."@en ;
+    dc:description "발화를 그 발화를 한 행위자 또는 발화자로 기록된 행위자와 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#isUtteranceRecordedIn
 ekcd:isUtteranceRecordedIn
@@ -371,8 +373,8 @@ ekcd:isUtteranceRecordedIn
     rdfs:range ekc:Record ;
     rdfs:label "is utterance recorded in"@en ;
     rdfs:label "발화가 기록되어 있다"@ko ;
-    rdfs:comment "Relates an utterance to the record in which it is documented."@en ;
-    rdfs:comment "발화를 그것이 기록된 문헌·기록물과 연결합니다."@ko .
+    dc:description "Relates an utterance to the record in which it is documented."@en ;
+    dc:description "발화를 그것이 기록된 문헌·기록물과 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#utteranceAbout
 ekcd:utteranceAbout
@@ -381,8 +383,8 @@ ekcd:utteranceAbout
     rdfs:range owl:Thing ;
     rdfs:label "utterance about"@en ;
     rdfs:label "발화의 대상"@ko ;
-    rdfs:comment "Relates an utterance to the event, record, person, place, object, or concept that it concerns."@en ;
-    rdfs:comment "발화를 그 발화가 다루는 사건, 기록물, 인물, 장소, 사물 또는 개념과 연결합니다."@ko .
+    dc:description "Relates an utterance to the event, record, person, place, object, or concept that it concerns."@en ;
+    dc:description "발화를 그 발화가 다루는 사건, 기록물, 인물, 장소, 사물 또는 개념과 연결합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#retrospectivelyFrames
 ekcd:retrospectivelyFrames
@@ -392,9 +394,97 @@ ekcd:retrospectivelyFrames
     rdfs:range ekc:Event ;
     rdfs:label "retrospectively frames"@en ;
     rdfs:label "사후적으로 의미화한다"@ko ;
-    rdfs:comment "Relates an utterance to an event or event complex that it retrospectively frames, summarizes, or politically contextualizes."@en ;
-    rdfs:comment "발화를 그것이 사후적으로 총괄하거나 정치적·해석적으로 의미화하는 사건 또는 사건군과 연결합니다."@ko .
+    dc:description "Relates an utterance to an event or event complex that it retrospectively frames, summarizes, or politically contextualizes."@en ;
+    dc:description "발화를 그것이 사후적으로 총괄하거나 정치적·해석적으로 의미화하는 사건 또는 사건군과 연결합니다."@ko .
 
+
+#################################################################
+# EKCD viewpoint-relative spatial object properties
+#################################################################
+
+### http://dh.aks.ac.kr/ontologies/ekcd#isOnLeftSideFromPerspectiveOf
+ekcd:isOnLeftSideFromPerspectiveOf
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ekcd:contextuallyRelatedTo ;
+    rdfs:label "is on the left side from the perspective of"@en ;
+    rdfs:label "기준 시점에서 왼쪽에 위치함"@ko ;
+    dc:description "A viewpoint-relative spatial relation indicating that the subject is located on the left side as seen from the perspective or facing direction of the reference person, seat, or focal position."@en ;
+    dc:description "주어가 기준 인물, 좌석, 중심 위치 또는 초점 위치의 시점이나 바라보는 방향에서 왼쪽에 위치함을 나타내는 기준 시점 상대 공간 관계입니다."@ko ;
+    skos:scopeNote "Use this property when left/right is defined from the perspective or facing direction of a reference figure, seat, or focal position, not from the modern viewer's image-plane orientation."@en ;
+    skos:scopeNote "현대 관찰자가 도판을 볼 때의 좌우가 아니라, 기준 인물·좌석·중심 위치가 바라보는 방향에서의 좌우를 표현할 때 사용합니다."@ko ;
+    skos:example "sok:GiroElders_SeatingArea_Left ekcd:isOnLeftSideFromPerspectiveOf sok:RoyalSeat_1744 ."@en .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#isOnRightSideFromPerspectiveOf
+ekcd:isOnRightSideFromPerspectiveOf
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ekcd:contextuallyRelatedTo ;
+    rdfs:label "is on the right side from the perspective of"@en ;
+    rdfs:label "기준 시점에서 오른쪽에 위치함"@ko ;
+    dc:description "A viewpoint-relative spatial relation indicating that the subject is located on the right side as seen from the perspective or facing direction of the reference person, seat, or focal position."@en ;
+    dc:description "주어가 기준 인물, 좌석, 중심 위치 또는 초점 위치의 시점이나 바라보는 방향에서 오른쪽에 위치함을 나타내는 기준 시점 상대 공간 관계입니다."@ko ;
+    skos:scopeNote "Use this property when left/right is defined from the perspective or facing direction of a reference figure, seat, or focal position, not from the modern viewer's image-plane orientation."@en ;
+    skos:scopeNote "현대 관찰자가 도판을 볼 때의 좌우가 아니라, 기준 인물·좌석·중심 위치가 바라보는 방향에서의 좌우를 표현할 때 사용합니다."@ko ;
+    skos:example "sok:Officials_SeatingArea_Right ekcd:isOnRightSideFromPerspectiveOf sok:RoyalSeat_1744 ."@en .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#hasFocalPosition
+ekcd:hasFocalPosition
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ekcd:contextuallyRelatedTo ;
+    rdfs:label "has focal position"@en ;
+    rdfs:label "중심 위치를 갖는다"@ko ;
+    dc:description "Relates a spatial model, scene, ritual event, seating chart, or visual arrangement to a position that functions as its focal point."@en ;
+    dc:description "공간 모델, 장면, 의례 사건, 좌차 또는 시각적 배치를 그 중심점으로 기능하는 위치와 연결합니다."@ko ;
+    skos:scopeNote "In seating-chart reconstruction, the focal position may be a royal seat, presiding seat, ritual center, or other spatial focus used to organize visual hierarchy."@en ;
+    skos:scopeNote "좌차 복원에서는 어좌, 주재자의 자리, 의례 중심점 또는 시각 위계를 조직하는 기타 공간적 초점을 대상 값으로 삼을 수 있습니다."@ko ;
+    skos:example "sok:Jwacha_SpatialReconstructionLayer_001 ekcd:hasFocalPosition sok:RoyalSeat_1744 ."@en .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#hasFacingDirection
+ekcd:hasFacingDirection
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ekcd:contextuallyRelatedTo ;
+    rdfs:label "has facing direction"@en ;
+    rdfs:label "바라보는 방향을 갖는다"@ko ;
+    dc:description "Relates a person, seat, position, figure, or spatial arrangement to a modeled direction or orientation toward which it faces."@en ;
+    dc:description "인물, 좌석, 위치, 형상 또는 공간 배치를 그것이 바라보는 것으로 모델링된 방향이나 지향성과 연결합니다."@ko ;
+    skos:scopeNote "Use object resources, such as direction concepts, target positions, or focal objects, rather than literal strings, when the facing direction needs to participate in further graph relations."@en ;
+    skos:scopeNote "바라보는 방향이 다른 그래프 관계에 다시 참여해야 하는 경우에는 문자열이 아니라 방향 개념, 대상 위치, 초점 대상 등의 object resource를 사용합니다."@ko ;
+    skos:example "sok:RoyalSeat_1744 ekcd:hasFacingDirection sok:Toward_AssembledOfficials ."@en .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#hasSightLineTo
+ekcd:hasSightLineTo
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ekcd:contextuallyRelatedTo ;
+    rdfs:label "has sight line to"@en ;
+    rdfs:label "시선축이 향한다"@ko ;
+    dc:description "Relates a viewing position, seat, person, figure, or spatial focus to a target person, group, position, seating area, or scene element along a modeled sight line."@en ;
+    dc:description "시점 위치, 좌석, 인물, 형상 또는 공간적 초점을 모델링된 시선축이 향하는 대상 인물, 집단, 위치, 좌석 영역 또는 장면 요소와 연결합니다."@ko ;
+    skos:scopeNote "Use this property for modeled visual axes or lines of sight. It does not by itself assert actual eye contact or psychological attention."@en ;
+    skos:scopeNote "모델링된 시각축이나 시선 방향을 표현할 때 사용합니다. 그 자체로 실제 눈맞춤이나 심리적 주목을 단정하지는 않습니다."@ko ;
+    skos:example "sok:RoyalSeat_1744 ekcd:hasSightLineTo sok:GiroElders_SeatingArea_1744 ."@en .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#isPositionedAround
+ekcd:isPositionedAround
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf ekcd:contextuallyRelatedTo ;
+    rdfs:label "is positioned around"@en ;
+    rdfs:label "주변에 배치됨"@ko ;
+    dc:description "Relates a person, group, seating area, object, or spatial element to a focal position or reference object around which it is arranged."@en ;
+    dc:description "인물, 집단, 좌석 영역, 사물 또는 공간 요소를 그것이 둘러싸거나 주변에 배치되는 중심 위치 또는 기준 대상과 연결합니다."@ko ;
+    skos:scopeNote "Use this property to express radial or surrounding spatial organization without specifying an exact side, distance, or coordinate."@en ;
+    skos:scopeNote "정확한 좌우, 거리, 좌표를 특정하지 않고 중심을 둘러싼 배치 관계를 표현할 때 사용합니다."@ko ;
+    skos:example "sok:GiroElders_SeatingArea_1744 ekcd:isPositionedAround sok:RoyalSeat_1744 ."@en .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#hasSeatingArea
+ekcd:hasSeatingArea
+    rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dcterms:hasPart ;
+    rdfs:label "has seating area"@en ;
+    rdfs:label "좌석 영역을 갖는다"@ko ;
+    dc:description "Relates a seating chart, spatial reconstruction model, ritual space, scene, or event to a seating area included in it."@en ;
+    dc:description "좌차, 공간 복원 모델, 의례 공간, 장면 또는 사건을 그 안에 포함된 좌석 영역과 연결합니다."@ko ;
+    skos:scopeNote "Use this property for grouped seating zones. For individual person-to-seat relations, use a more specific participation or placement relation when available."@en ;
+    skos:scopeNote "집단적 좌석 구역을 표현할 때 사용합니다. 개별 인물과 좌석의 관계는 가능한 경우 더 구체적인 참여 또는 배치 관계를 사용합니다."@ko ;
+    skos:example "sok:Jwacha_SpatialReconstructionLayer_001 ekcd:hasSeatingArea sok:GiroElders_SeatingArea_1744 ."@en .
 
 #################################################################
 #    Data properties
@@ -455,8 +545,8 @@ ekcd:evidenceLocation
     rdfs:range rdfs:Literal ;
     rdfs:label "evidence location"@en ;
     rdfs:label "근거 위치"@ko ;
-    rdfs:comment "A textual indication of the location of evidence, such as a folio, page, section, scene title, article date, or database entry."@en ;
-    rdfs:comment "권차, 면, 쪽, 절목, 장면명, 기사 일자, 데이터베이스 항목 등 근거 자료 안에서의 위치를 기록합니다."@ko ;
+    dc:description "A textual indication of the location of evidence, such as a folio, page, section, scene title, article date, or database entry."@en ;
+    dc:description "권차, 면, 쪽, 절목, 장면명, 기사 일자, 데이터베이스 항목 등 근거 자료 안에서의 위치를 기록합니다."@ko ;
     skos:example "『기사경회첩』 경현당선온도; 『승정원일기』 영조 20년 11월 9일 기사"@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#evidenceNote
@@ -466,8 +556,8 @@ ekcd:evidenceNote
     rdfs:range rdfs:Literal ;
     rdfs:label "evidence note"@en ;
     rdfs:label "근거 설명"@ko ;
-    rdfs:comment "A note explaining how the cited evidence supports the interpretive assertion."@en ;
-    rdfs:comment "제시된 근거가 해당 해석적 진술을 어떻게 뒷받침하는지 설명합니다."@ko .
+    dc:description "A note explaining how the cited evidence supports the interpretive assertion."@en ;
+    dc:description "제시된 근거가 해당 해석적 진술을 어떻게 뒷받침하는지 설명합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#utteranceText
 ekcd:utteranceText
@@ -476,8 +566,8 @@ ekcd:utteranceText
     rdfs:range rdfs:Literal ;
     rdfs:label "utterance text"@en ;
     rdfs:label "발화 내용"@ko ;
-    rdfs:comment "The quoted, transcribed, or summarized text of an utterance."@en ;
-    rdfs:comment "발화의 인용문, 전사문 또는 요약문을 기록합니다."@ko .
+    dc:description "The quoted, transcribed, or summarized text of an utterance."@en ;
+    dc:description "발화의 인용문, 전사문 또는 요약문을 기록합니다."@ko .
 
 
 #################################################################
@@ -514,8 +604,8 @@ ekcd:InterpretiveAssertion
     rdfs:subClassOf prov:Entity ;
     rdfs:label "Interpretive assertion"@en ;
     rdfs:label "해석적 진술"@ko ;
-    rdfs:comment "A modeled assertion that records an interpretive relation, its subject, predicate, object, evidence, and confidence level."@en ;
-    rdfs:comment "해석적 관계의 주어, 술어, 목적어, 근거, 신뢰도 수준을 함께 기록하기 위한 진술 단위입니다."@ko .
+    dc:description "A modeled assertion that records an interpretive relation, its subject, predicate, object, evidence, and confidence level."@en ;
+    dc:description "해석적 관계의 주어, 술어, 목적어, 근거, 신뢰도 수준을 함께 기록하기 위한 진술 단위입니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#InterpretiveConfidenceLevel
 ekcd:InterpretiveConfidenceLevel
@@ -523,8 +613,8 @@ ekcd:InterpretiveConfidenceLevel
     rdfs:subClassOf skos:Concept ;
     rdfs:label "Interpretive confidence level"@en ;
     rdfs:label "해석적 신뢰도 수준"@ko ;
-    rdfs:comment "A controlled value indicating the degree of confidence assigned to an interpretive assertion."@en ;
-    rdfs:comment "해석적 진술에 부여되는 신뢰도 정도를 나타내는 통제값입니다."@ko .
+    dc:description "A controlled value indicating the degree of confidence assigned to an interpretive assertion."@en ;
+    dc:description "해석적 진술에 부여되는 신뢰도 정도를 나타내는 통제값입니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#Utterance
 ekcd:Utterance
@@ -532,8 +622,8 @@ ekcd:Utterance
     rdfs:subClassOf ekc:Event ;
     rdfs:label "Utterance"@en ;
     rdfs:label "발화"@ko ;
-    rdfs:comment "An event in which an actor makes, issues, or is represented as making a statement, command, declaration, or other meaningful verbal expression."@en ;
-    rdfs:comment "행위자가 진술, 명령, 선언 등 의미 있는 언표를 하거나 한 것으로 기록되는 사건입니다."@ko ;
+    dc:description "An event in which an actor makes, issues, or is represented as making a statement, command, declaration, or other meaningful verbal expression."@en ;
+    dc:description "행위자가 진술, 명령, 선언 등 의미 있는 언표를 하거나 한 것으로 기록되는 사건입니다."@ko ;
     skos:scopeNote "This class models an utterance as a performative event. The record in which the utterance is documented should be modeled separately as an instance of ekc:Record or its subclass."@en ;
     skos:scopeNote "이 클래스는 발화를 수행적 사건으로 모델링합니다. 발화가 기록된 문헌·기록물은 별도로 ekc:Record 또는 그 하위 클래스의 개체로 모델링합니다."@ko .
 
@@ -543,8 +633,8 @@ ekcd:RoyalUtterance
     rdfs:subClassOf ekcd:Utterance ;
     rdfs:label "Royal utterance"@en ;
     rdfs:label "국왕 발화"@ko ;
-    rdfs:comment "An utterance made by, attributed to, or formally represented as issued by a king or royal figure."@en ;
-    rdfs:comment "국왕 또는 왕실 인물이 한 것으로 기록되거나 공식적으로 제시되는 발화입니다."@ko .
+    dc:description "An utterance made by, attributed to, or formally represented as issued by a king or royal figure."@en ;
+    dc:description "국왕 또는 왕실 인물이 한 것으로 기록되거나 공식적으로 제시되는 발화입니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#RoyalCommand
 ekcd:RoyalCommand
@@ -552,8 +642,8 @@ ekcd:RoyalCommand
     rdfs:subClassOf ekcd:RoyalUtterance ;
     rdfs:label "Royal command"@en ;
     rdfs:label "왕명"@ko ;
-    rdfs:comment "A royal utterance that functions as an instruction, order, directive, or command."@en ;
-    rdfs:comment "지시, 명령, 교시, 하교의 기능을 수행하는 국왕 발화입니다."@ko .
+    dc:description "A royal utterance that functions as an instruction, order, directive, or command."@en ;
+    dc:description "지시, 명령, 교시, 하교의 기능을 수행하는 국왕 발화입니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#RetrospectiveUtterance
 ekcd:RetrospectiveUtterance
@@ -561,8 +651,8 @@ ekcd:RetrospectiveUtterance
     rdfs:subClassOf ekcd:Utterance ;
     rdfs:label "Retrospective utterance"@en ;
     rdfs:label "회고적/총괄적 발화"@ko ;
-    rdfs:comment "An utterance that retrospectively summarizes, frames, or gives political or interpretive meaning to preceding events or records."@en ;
-    rdfs:comment "앞선 사건이나 기록을 사후적으로 총괄하거나 정치적·해석적 의미 속에 배치하는 발화입니다."@ko .
+    dc:description "An utterance that retrospectively summarizes, frames, or gives political or interpretive meaning to preceding events or records."@en ;
+    dc:description "앞선 사건이나 기록을 사후적으로 총괄하거나 정치적·해석적 의미 속에 배치하는 발화입니다."@ko .
 
 
 #################################################################
