@@ -31,13 +31,14 @@
                                                       "한국 문화유산 지식 모델링을 위해 EKC 계열을 확장한 파생 온톨로지로서, 날짜 및 URL 관련 datatype properties를 보완하고 표준 시맨틱 매핑 properties의 로컬 적용 지침과 프로젝트 수준의 semantic 확장을 제공합니다."@ko ,
                                                       "Version 1.1.0 adds classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling in historical knowledge graphs."@en ,
                                                       "버전 1.1.0은 역사 지식그래프에서 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 클래스와 속성을 추가합니다."@ko ;
-                                       dc:publisher "The Center for Digital Humanities at the Academy of Korean Studies"@en ,
+                                       dc:publisher <https://dh.aks.ac.kr/> ,
+                                                  "The Center for Digital Humanities, Academy of Korean Studies"@en ,
                                                     "한국학중앙연구원 디지털인문학연구소"@ko ;
                                        dc:title "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling"@en ,
                                                 "EKCD: 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지"@ko ;
                                        dcterms:issued "2026-04-17"^^xsd:date ;
                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-                                       dcterms:modified "2026-05-25"^^xsd:date ;
+                                       dcterms:modified "2026-06-11"^^xsd:date ;
                                        dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
                                        dcterms:source <http://dh.aks.ac.kr/ontologies/ekc> ;
                                        vann:preferredNamespacePrefix "ekcd" ;
