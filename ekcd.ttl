@@ -38,7 +38,7 @@
                                                 "EKCD: 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지"@ko ;
                                        dcterms:issued "2026-04-17"^^xsd:date ;
                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-                                       dcterms:modified "2026-06-11"^^xsd:date ;
+                                       dcterms:modified "2026-08-14"^^xsd:date ;
                                        dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
                                        dcterms:source <http://dh.aks.ac.kr/ontologies/ekc> ;
                                        vann:preferredNamespacePrefix "ekcd" ;
