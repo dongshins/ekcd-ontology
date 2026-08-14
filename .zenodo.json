@@ -1,8 +1,8 @@
 {
   "title": "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling",
-  "version": "1.1.2",
-  "publication_date": "2026-05-25",
-  "description": "EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage knowledge modeling. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions while preserving conceptual continuity with the EKC ontology line. Version 1.1.2 extends the ontology with classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling while preserving compatibility with v1.0.8 term usage.",
+  "version": "1.1.5",
+  "publication_date": "2026-08-14",
+  "description": "EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions while preserving conceptual continuity with the EKC ontology line. Version 1.1.5 is a non-breaking metadata and discoverability revision that preserves the vocabulary terms and modeling semantics of v1.1.2 while refining ontology-level publisher metadata, version metadata, and geographical discoverability.",
   "creators": [
     {
       "name": "SEO, Dong Shin",
@@ -32,6 +32,7 @@
     "digital humanities",
     "Korean cultural heritage",
     "Korean studies",
+    "Korea",
     "EKC",
     "EKCD"
   ],
@@ -42,7 +43,7 @@
       "resource_type": "software"
     },
     {
-      "identifier": "https://github.com/dongshins/ekcd-ontology/tree/v1.1.2",
+      "identifier": "https://github.com/dongshins/ekcd-ontology/tree/v1.1.5",
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
