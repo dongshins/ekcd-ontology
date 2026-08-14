@@ -8,6 +8,8 @@ The project follows a conservative semantic-versioning practice for ontology rel
 
 ## [v1.1.5] - 2026-08-14
 
+**Zenodo DOI:** https://doi.org/10.5281/zenodo.21936376
+
 ### Added
 - Added the publisher URI `https://dh.aks.ac.kr/` to the ontology-level publisher metadata to provide an explicit machine-readable reference to the publishing institution.
 
