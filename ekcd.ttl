@@ -39,7 +39,7 @@
                                        dcterms:issued "2026-04-17"^^xsd:date ;
                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
                                        dcterms:modified "2026-08-14"^^xsd:date ;
-                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
+                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
                                        dcterms:source <http://dh.aks.ac.kr/ontologies/ekc> ;
                                        vann:preferredNamespacePrefix "ekcd" ;
                                        vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#" ;
@@ -48,7 +48,7 @@
                                                     "https://dh.aks.ac.kr/~hanyang2/wiki/index.php/Ontology:EKC_2022" ,
                                                     "https://github.com/dongshins/EKC_ontology" ,
                                                     "https://github.com/dongshins/EKC_ontology_advanced" ;
-                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
+                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
                                        owl:versionInfo "EKCD v1.1.5"@en ;
                                        dcat:contactPoint <https://github.com/dongshins> .
 
