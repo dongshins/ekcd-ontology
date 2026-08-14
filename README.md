@@ -132,11 +132,18 @@ EKCD distinguishes strict identity from conceptual, contextual, or vocabulary ma
 
 ## Release history
 
-See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.1.2-ontology-revision.md`](docs/changes/v1.1.2-ontology-revision.md) for the detailed v1.1.2 ontology revision note.
+See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.1.5-ontology-revision.md`](docs/changes/v1.1.5-ontology-revision.md) for the detailed v1.1.5 ontology revision note.
 
 ## Citation
 
-If you use EKCD v1.1.2, please cite the version-specific Zenodo record:
+## Citation
+
+For citing EKCD as an evolving ontology project across versions, use the concept DOI:
+
+> https://doi.org/10.5281/zenodo.19753664
+
+A version-specific DOI for v1.1.5 will be assigned through the Zenodo-GitHub release integration.
+<!-- If you use EKCD v1.1.2, please cite the version-specific Zenodo record:
 
 (EKCD v1.1.2를 사용한 연구에서는 재현성을 위해 다음의 version-specific DOI를 인용해 주세요. @ko)
 
@@ -147,7 +154,7 @@ For citing the EKCD ontology as an evolving project across versions, use the con
 (EKCD 온톨로지 전체 버전 계열을 포괄적으로 가리킬 때는 다음 concept DOI를 사용할 수 있습니다. @ko)
 
 > https://doi.org/10.5281/zenodo.19753664
-
+-->
 ## Credits
 
 EKCD was created by Dong Shin SEO as an EKC-derived ontology for Korean cultural heritage knowledge modeling. Su-jeong PARK contributed to the improvement of EKCD.
