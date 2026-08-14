@@ -49,7 +49,7 @@
                                                     "https://github.com/dongshins/EKC_ontology" ,
                                                     "https://github.com/dongshins/EKC_ontology_advanced" ;
                                        owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
-                                       owl:versionInfo "EKCD v1.1.2"@en ;
+                                       owl:versionInfo "EKCD v1.1.5"@en ;
                                        dcat:contactPoint <https://github.com/dongshins> .
 
 #################################################################
