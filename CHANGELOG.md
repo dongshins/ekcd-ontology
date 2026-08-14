@@ -6,6 +6,39 @@ The format follows a practical Keep-a-Changelog style, and version numbers follo
 
 The project follows a conservative semantic-versioning practice for ontology releases. Patch releases may include metadata clarification, documentation improvement, local authoring-policy clarification, and non-breaking vocabulary declarations. Minor releases may include non-breaking vocabulary expansion.
 
+## [v1.1.5] - 2026-08-14
+
+### Added
+- Added the publisher URI `https://dh.aks.ac.kr/` to the ontology-level publisher metadata to provide an explicit machine-readable reference to the publishing institution.
+
+### Changed
+- Updated `owl:versionInfo` from `EKCD v1.1.2` to `EKCD v1.1.5`.
+- Updated `dcterms:modified` from `2026-05-25` to `2026-08-14`.
+- Updated `owl:priorVersion` and `dcterms:replaces` to point to the preceding public release, `http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl`.
+- Revised the English ontology-level description to explicitly refer to historical and cultural resources of Korea, improving geographical clarity and vocabulary discoverability.
+- Normalized the English publisher label to `The Center for Digital Humanities, Academy of Korean Studies`.
+
+### Removed
+- No vocabulary term declarations were removed.
+- Removed only the superseded v1.1.2 version-metadata values and the previous publisher literal.
+
+### Compatibility
+- No OWL classes, object properties, datatype properties, annotation properties, controlled confidence values, or modeling semantics introduced in v1.1.2 were removed or changed.
+- Existing ABox data using v1.1.2 vocabulary terms remains compatible with v1.1.5.
+- v1.1.5 should be treated as a non-breaking metadata and discoverability patch release.
+
+### Diff summary against v1.1.2
+
+| Metric | v1.1.2 | v1.1.5 | Change |
+|---|---:|---:|---:|
+| RDF triples | 321 | 322 | +1 |
+| OWL classes | 11 | 11 | 0 |
+| OWL object properties | 36 | 36 | 0 |
+| OWL datatype properties | 8 | 8 | 0 |
+| OWL annotation properties | 19 | 19 | 0 |
+| OWL named individuals | 7 | 7 | 0 |
+| SKOS concepts | 3 | 3 | 0 |
+
 ## [v1.1.2] - 2026-05-25
 
 **Zenodo DOI:** https://doi.org/10.5281/zenodo.20379676
