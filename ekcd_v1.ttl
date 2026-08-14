@@ -27,7 +27,7 @@
                                        dc:contributor <https://orcid.org/0009-0008-1531-1238> ,
                                                   "Su-jeong PARK"@en ,
                                                   "박수정"@ko ;
-                                       dc:description "A derivative ontology extending the EKC line for Korean cultural heritage knowledge modeling, providing additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions."@en ,
+                                       dc:description "A derivative ontology extending the EKC line for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions."@en ,
                                                       "한국 문화유산 지식 모델링을 위해 EKC 계열을 확장한 파생 온톨로지로서, 날짜 및 URL 관련 datatype properties를 보완하고 표준 시맨틱 매핑 properties의 로컬 적용 지침과 프로젝트 수준의 semantic 확장을 제공합니다."@ko ,
                                                       "Version 1.1.0 adds classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling in historical knowledge graphs."@en ,
                                                       "버전 1.1.0은 역사 지식그래프에서 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 클래스와 속성을 추가합니다."@ko ;
@@ -38,8 +38,8 @@
                                                 "EKCD: 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지"@ko ;
                                        dcterms:issued "2026-04-17"^^xsd:date ;
                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-                                       dcterms:modified "2026-06-11"^^xsd:date ;
-                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
+                                       dcterms:modified "2026-08-14"^^xsd:date ;
+                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
                                        dcterms:source <http://dh.aks.ac.kr/ontologies/ekc> ;
                                        vann:preferredNamespacePrefix "ekcd" ;
                                        vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#" ;
@@ -48,8 +48,8 @@
                                                     "https://dh.aks.ac.kr/~hanyang2/wiki/index.php/Ontology:EKC_2022" ,
                                                     "https://github.com/dongshins/EKC_ontology" ,
                                                     "https://github.com/dongshins/EKC_ontology_advanced" ;
-                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_0_8.ttl> ;
-                                       owl:versionInfo "EKCD v1.1.2"@en ;
+                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
+                                       owl:versionInfo "EKCD v1.1.5"@en ;
                                        dcat:contactPoint <https://github.com/dongshins> .
 
 #################################################################
