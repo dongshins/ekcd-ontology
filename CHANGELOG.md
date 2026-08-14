@@ -6,7 +6,7 @@ The format follows a practical Keep-a-Changelog style, and version numbers follo
 
 The project follows a conservative semantic-versioning practice for ontology releases. Patch releases may include metadata clarification, documentation improvement, local authoring-policy clarification, and non-breaking vocabulary declarations. Minor releases may include non-breaking vocabulary expansion.
 
-## [v1.1.5] - 2026-08-14
+## v1.1.5 - 2026-08-14
 
 **Zenodo DOI:** https://doi.org/10.5281/zenodo.21936376
 
