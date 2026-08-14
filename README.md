@@ -3,11 +3,11 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753664.svg)](https://doi.org/10.5281/zenodo.19753664)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-**EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, local guidance for semantic mapping properties, and project-level extensions for interpretive assertions, evidence tracking, confidence levels, and utterance modeling.
+**EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, local guidance for semantic mapping properties, and project-level extensions for interpretive assertions, evidence tracking, confidence levels, and utterance modeling.
 
 **EKCD**는 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지입니다. EKC 온톨로지 계열을 바탕으로, 프로젝트 수준의 모델링 관례, 날짜 및 URL 관련 datatype property, 시맨틱 매핑 property의 로컬 적용 지침, 그리고 해석적 진술, 근거 추적, 신뢰도 수준, 발화 모델링을 위한 프로젝트 수준의 확장을 제공합니다. @ko 
 
-- Current release: **v1.1.2**
+- Current release: **v1.1.5**
 - Ontology IRI: `http://dh.aks.ac.kr/ontologies/ekcd`
 - Version IRI: `http://dh.aks.ac.kr/ontologies/ekcd_v1`
 - Preferred prefix: `ekcd`
@@ -15,7 +15,8 @@
 - Imported ontology: `http://dh.aks.ac.kr/ontologies/ekc-2025`
 - Source ontology: `http://dh.aks.ac.kr/ontologies/ekc`
 - License: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
-- LOV Registration: [EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling (ekcd)](https://lov.linkeddata.es/dataset/lov/vocabs/ekcd) 
+- LOV status: Re-registration pending
+<!-- - LOV Registration: [EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling (ekcd)](https://lov.linkeddata.es/dataset/lov/vocabs/ekcd) -->
 
 ## Overview
 
