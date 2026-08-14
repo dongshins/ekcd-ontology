@@ -20,13 +20,13 @@
 
 ## Overview
 
-EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. Version 1.1.2 preserves the v1.0.8 date, URL, namespace, and semantic mapping guidance while adding a small set of classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling.
+EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. Version 1.1.5 preserves the vocabulary terms and modeling semantics of v1.1.2 while refining ontology-level publisher metadata, version metadata, and geographical discoverability through an explicit reference to Korea.
 
-EKCD는 EKC 온톨로지 계열에서 파생된 한국 문화유산 데이터의 RDF/OWL 모델링을 지원합니다. Version 1.1.2는 v1.0.8의 날짜, URL, namespace, 시맨틱 매핑 지침을 유지하면서, 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 소수의 class와 property를 추가하였습니다.
+EKCD는 EKC 온톨로지 계열에서 파생·정리된 한국 문화유산 데이터의 RDF/OWL 모델링을 지원합니다. Version 1.1.5는 v1.1.2의 vocabulary terms와 모델링 의미를 유지하면서, ontology-level publisher metadata와 version metadata를 정비하고 Korea에 대한 명시적 언급을 통해 지리적 검색 가능성을 보완하였습니다.
 
 The ontology currently includes:
 
-| Category | Count in v1.1.2 | Notes |
+| Category | Count in v1.1.5 | Notes |
 |---|---:|---|
 | OWL classes | 11 | Adds EKCD classes for interpretive assertions, confidence levels, and utterance modeling, while retaining `ekc:3D_모델`, `ekc:3D_지도`, `voaf:Vocabulary`, `skos:Concept`, and `prov:Entity` declarations. |
 | OWL object properties | 36 | Adds EKCD-local properties for interpretive assertions, correspondence, contextual relation, evidence derivation, confidence, and utterance modeling. |
@@ -104,7 +104,8 @@ ekcd:SomeImageResource
 
 ## Interpretive assertion and utterance modeling
 
-Version 1.1.2 adds a compact modeling layer for cases where cultural heritage data requires interpretive statements rather than strict identity claims. `ekcd:InterpretiveAssertion` can be used to record the subject, predicate, object, evidence, and confidence level of an interpreted relation.
+Since v1.1.2, EKCD has included a compact modeling layer for cases where cultural heritage data requires interpretive statements rather than strict identity claims.
+ `ekcd:InterpretiveAssertion` can be used to record the subject, predicate, object, evidence, and confidence level of an interpreted relation.
 
 For utterance-centered historical modeling, EKCD adds `ekcd:Utterance` and its subclasses `ekcd:RoyalUtterance`, `ekcd:RoyalCommand`, and `ekcd:RetrospectiveUtterance`. These classes support the modeling of recorded statements, commands, declarations, and retrospective framings as event-like units in historical knowledge graphs.
 
