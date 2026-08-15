@@ -30,7 +30,9 @@
                                        dc:description "A derivative ontology extending the EKC line for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions."@en ,
                                                       "한국 문화유산 지식 모델링을 위해 EKC 계열을 확장한 파생 온톨로지로서, 날짜 및 URL 관련 datatype properties를 보완하고 표준 시맨틱 매핑 properties의 로컬 적용 지침과 프로젝트 수준의 semantic 확장을 제공합니다."@ko ,
                                                       "Version 1.1.0 adds classes and properties for interpretive assertions, confidence levels, evidence tracking, and utterance modeling in historical knowledge graphs."@en ,
-                                                      "버전 1.1.0은 역사 지식그래프에서 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 클래스와 속성을 추가합니다."@ko ;
+                                                      "버전 1.1.0은 역사 지식그래프에서 해석적 진술, 신뢰도 수준, 근거 추적, 발화 모델링을 위한 클래스와 속성을 추가합니다."@ko ,
+                                                      "Version 1.2.0 clarifies the methodological positioning of EKCD's lightweight interpretive-assertion pattern in relation to CRMinf and separates two independent dimensions of interpretation: interpretive basis and epistemic confidence. It documents conceptual overlap with CRMinf while retaining the existing PROV-O-based, project-level EKCD model without importing or formally aligning to CRMinf."@en ,
+                                                      "버전 1.2.0은 EKCD의 경량 해석적 진술 모델과 CRMinf의 관계에 대한 방법론적 위치를 명확히 하고, 해석의 두 독립 차원인 해석 근거 방식과 인식론적 신뢰도를 분리합니다. CRMinf와의 개념적 접점을 문서화하되, CRMinf를 import하거나 형식적으로 정렬하지 않고 기존 PROV-O 기반의 프로젝트 수준 EKCD 모델을 유지합니다."@ko ;
                                        dc:publisher <https://dh.aks.ac.kr/> ,
                                                   "The Center for Digital Humanities, Academy of Korean Studies"@en ,
                                                     "한국학중앙연구원 디지털인문학연구소"@ko ;
@@ -38,18 +40,20 @@
                                                 "EKCD: 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지"@ko ;
                                        dcterms:issued "2026-04-17"^^xsd:date ;
                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-                                       dcterms:modified "2026-08-14"^^xsd:date ;
-                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
+                                       dcterms:modified "2026-08-15"^^xsd:date ;
+                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_5.ttl> ;
                                        dcterms:source <http://dh.aks.ac.kr/ontologies/ekc> ;
                                        vann:preferredNamespacePrefix "ekcd" ;
                                        vann:preferredNamespaceUri "http://dh.aks.ac.kr/ontologies/ekcd#" ;
                                        rdfs:seeAlso <https://github.com/dongshins/ekcd-ontology> ,
                                                     <http://dh.aks.ac.kr/ontologies/ekc> ,
+                                                    <https://cidoc-crm.org/crminf/> ,
+                                                    <https://cidoc-crm.org/crminf/ModelVersion/crminf-1.2.1> ,
                                                     "https://dh.aks.ac.kr/~hanyang2/wiki/index.php/Ontology:EKC_2022" ,
                                                     "https://github.com/dongshins/EKC_ontology" ,
                                                     "https://github.com/dongshins/EKC_ontology_advanced" ;
-                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_2.ttl> ;
-                                       owl:versionInfo "EKCD v1.1.5"@en ;
+                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekcd_v1_1_5.ttl> ;
+                                       owl:versionInfo "EKCD v1.2.0"@en ;
                                        dcat:contactPoint <https://github.com/dongshins> .
 
 #################################################################
@@ -284,7 +288,7 @@ foaf:member rdf:type owl:ObjectProperty .
 
 
 #################################################################
-# EKCD interpretive assertion and utterance object properties
+# EKCD interpretive assertion, evidence, confidence, and utterance object properties
 #################################################################
 
 ### http://www.w3.org/ns/prov#wasDerivedFrom
@@ -293,7 +297,9 @@ prov:wasDerivedFrom
     rdfs:label "was derived from"@en ;
     rdfs:label "근거 자료에서 도출됨"@ko ;
     rdfs:comment "Relates an interpretive assertion or modeled resource to the source resource from which it was derived."@en ;
-    rdfs:comment "해석적 진술이나 모델링된 자원을 그것이 도출된 근거 자료와 연결합니다."@ko .
+    rdfs:comment "해석적 진술이나 모델링된 자원을 그것이 도출된 근거 자료와 연결합니다."@ko ;
+    skos:scopeNote "In EKCD, this property is used as a lightweight provenance link from an interpretive assertion or modeled resource to supporting source material. It does not by itself model an inference-making activity, inference logic, belief adoption, or a complete scholarly argumentation chain as addressed in CRMinf."@en ;
+    skos:scopeNote "EKCD에서는 이 property를 해석적 진술 또는 모델링된 자원에서 그 근거 자료로 이어지는 경량 provenance 연결로 사용합니다. 이 property 자체가 CRMinf에서 다루는 추론 행위, 추론 논리, 믿음 채택 또는 완전한 학술적 논증 사슬을 모델링하는 것은 아닙니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#assertsSubject
 ekcd:assertsSubject
@@ -345,6 +351,19 @@ ekcd:contextuallyRelatedTo
     rdfs:comment "Relates two resources that are associated through historical, textual, visual, or interpretive context, without asserting direct correspondence."@en ;
     rdfs:comment "직접 대응을 주장하지 않고, 역사적·문헌적·시각적·해석적 맥락 안에서 관련되는 두 자원을 연결합니다."@ko .
 
+### http://dh.aks.ac.kr/ontologies/ekcd#hasInterpretiveBasis
+ekcd:hasInterpretiveBasis
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain ekcd:InterpretiveAssertion ;
+    rdfs:range ekcd:InterpretiveBasisType ;
+    rdfs:label "has interpretive basis"@en ;
+    rdfs:label "해석 근거 유형을 갖는다"@ko ;
+    rdfs:comment "Relates an interpretive assertion to the type of evidential or inferential basis on which the interpretation is made."@en ;
+    rdfs:comment "해석적 진술을 그 해석이 성립하는 직접적·추론적·맥락적 근거 방식과 연결합니다."@ko ;
+    skos:scopeNote "This property records how an interpretation is supported, independently of the confidence assigned to the assertion. Direct evidence does not automatically imply high confidence, and contextual or inferential support does not automatically imply low confidence."@en ;
+    skos:scopeNote "이 property는 해석이 어떤 방식으로 근거지어지는지를, 그 진술에 부여되는 신뢰도와 독립적으로 기록합니다. 직접 근거라고 해서 자동으로 높은 신뢰도를 뜻하지 않으며, 맥락적·추론적 근거라고 해서 자동으로 낮은 신뢰도를 뜻하지 않습니다."@ko .
+
+
 ### http://dh.aks.ac.kr/ontologies/ekcd#hasInterpretiveConfidence
 ekcd:hasInterpretiveConfidence
     rdf:type owl:ObjectProperty ;
@@ -352,8 +371,10 @@ ekcd:hasInterpretiveConfidence
     rdfs:range ekcd:InterpretiveConfidenceLevel ;
     rdfs:label "has interpretive confidence"@en ;
     rdfs:label "해석적 신뢰도를 갖는다"@ko ;
-    rdfs:comment "Relates an interpretive assertion to the confidence level assigned to it."@en ;
-    rdfs:comment "해석적 진술을 그 진술에 부여된 신뢰도 수준과 연결합니다."@ko .
+    rdfs:comment "Relates an interpretive assertion to the epistemic confidence level assigned to it."@en ;
+    rdfs:comment "해석적 진술을 그 진술에 부여된 인식론적 신뢰도 수준과 연결합니다."@ko ;
+    skos:scopeNote "This confidence axis is independent of ekcd:hasInterpretiveBasis. It records the degree of confidence assigned to an interpretive assertion, not whether the assertion is based on direct, inferential, or contextual support. The EKCD confidence level is not asserted to be equivalent to CRMinf I6 Belief Value or to any other CRMinf construct."@en ;
+    skos:scopeNote "이 신뢰도 축은 ekcd:hasInterpretiveBasis와 독립적입니다. 해석이 직접적·추론적·맥락적 근거에 기반하는지를 나타내는 것이 아니라, 해석적 진술에 부여된 확신의 정도를 기록합니다. EKCD의 신뢰도 수준을 CRMinf의 I6 Belief Value 또는 다른 CRMinf 구성요소와 동등한 것으로 선언하지 않습니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#hasSpeaker
 ekcd:hasSpeaker
@@ -498,7 +519,7 @@ voaf:Vocabulary rdf:type owl:Class .
 
 
 #################################################################
-# EKCD interpretive assertion, confidence, and utterance classes
+# EKCD interpretive assertion, basis, confidence, and utterance classes
 #################################################################
 
 ### http://www.w3.org/ns/prov#Entity
@@ -515,8 +536,23 @@ ekcd:InterpretiveAssertion
     rdfs:subClassOf prov:Entity ;
     rdfs:label "Interpretive assertion"@en ;
     rdfs:label "해석적 진술"@ko ;
-    rdfs:comment "A modeled assertion that records an interpretive relation, its subject, predicate, object, evidence, and confidence level."@en ;
-    rdfs:comment "해석적 관계의 주어, 술어, 목적어, 근거, 신뢰도 수준을 함께 기록하기 위한 진술 단위입니다."@ko .
+    rdfs:comment "A modeled assertion that records an interpretive relation, its subject, predicate, object, evidence, interpretive basis, and epistemic confidence level."@en ;
+    rdfs:comment "해석적 관계의 주어, 술어, 목적어, 근거 자료, 해석 근거 방식, 인식론적 신뢰도 수준을 함께 기록하기 위한 진술 단위입니다."@ko ;
+    rdfs:seeAlso <https://cidoc-crm.org/crminf/ModelVersion/crminf-1.2.1> ;
+    skos:scopeNote "EKCD deliberately uses a compact reified assertion pattern for historical and digital-humanities datasets. It separates the basis of an interpretation from the confidence assigned to that interpretation, while preserving traceability to evidence. Its scope is conceptually related to concerns addressed by CRMinf, but EKCD does not import CRMinf or assert owl:equivalentClass, rdfs:subClassOf, skos:exactMatch, or skos:closeMatch relations between ekcd:InterpretiveAssertion and CRMinf classes. CRMinf can be used as a complementary model when detailed representation of argumentation, inference making, belief adoption, or inference logic is required."@en ;
+    skos:scopeNote "EKCD는 역사학·디지털 인문학 데이터세트에서 간결한 reified assertion 패턴을 사용하며, 해석이 성립하는 근거 방식과 그 해석에 부여되는 신뢰도를 서로 분리하면서 근거 자료까지의 추적 가능성을 보존합니다. 그 관심 범위는 CRMinf가 다루는 문제와 개념적으로 연결되지만, EKCD는 CRMinf를 import하지 않으며 ekcd:InterpretiveAssertion과 CRMinf 클래스 사이에 owl:equivalentClass, rdfs:subClassOf, skos:exactMatch 또는 skos:closeMatch 관계를 선언하지 않습니다. 논증, 추론 행위, 믿음 채택, 추론 논리를 세밀하게 표현해야 하는 경우에는 CRMinf를 상호보완적 모델로 활용할 수 있습니다."@ko .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#InterpretiveBasisType
+ekcd:InterpretiveBasisType
+    rdf:type owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Interpretive basis type"@en ;
+    rdfs:label "해석 근거 유형"@ko ;
+    rdfs:comment "A controlled value indicating whether an interpretive assertion is supported directly, inferentially, or contextually."@en ;
+    rdfs:comment "해석적 진술이 직접적·추론적·맥락적 방식 가운데 어떤 방식으로 근거지어지는지를 나타내는 통제값입니다."@ko ;
+    skos:scopeNote "Interpretive basis is orthogonal to epistemic confidence. Use ekcd:hasInterpretiveConfidence separately to state how strongly the assertion is held."@en ;
+    skos:scopeNote "해석 근거 유형은 인식론적 신뢰도와 독립된 차원입니다. 그 진술을 어느 정도 확신하는지는 ekcd:hasInterpretiveConfidence로 별도 기록합니다."@ko .
+
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#InterpretiveConfidenceLevel
 ekcd:InterpretiveConfidenceLevel
@@ -524,8 +560,10 @@ ekcd:InterpretiveConfidenceLevel
     rdfs:subClassOf skos:Concept ;
     rdfs:label "Interpretive confidence level"@en ;
     rdfs:label "해석적 신뢰도 수준"@ko ;
-    rdfs:comment "A controlled value indicating the degree of confidence assigned to an interpretive assertion."@en ;
-    rdfs:comment "해석적 진술에 부여되는 신뢰도 정도를 나타내는 통제값입니다."@ko .
+    rdfs:comment "A controlled value indicating the epistemic degree of confidence assigned to an interpretive assertion."@en ;
+    rdfs:comment "해석적 진술에 부여되는 인식론적 신뢰도 정도를 나타내는 통제값입니다."@ko ;
+    skos:scopeNote "Confidence is independent of whether the assertion has a direct, inferential, or contextual basis."@en ;
+    skos:scopeNote "신뢰도는 그 진술의 근거 방식이 직접적·추론적·맥락적인지와 독립적으로 부여합니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#Utterance
 ekcd:Utterance
@@ -590,45 +628,134 @@ ekc: rdf:type owl:NamedIndividual ,
 
 
 #################################################################
-# EKCD interpretive confidence level individuals
+# EKCD interpretive basis and confidence individuals
+#################################################################
+
+### http://dh.aks.ac.kr/ontologies/ekcd#DirectEvidenceBasis
+ekcd:DirectEvidenceBasis
+    rdf:type owl:NamedIndividual ,
+             ekcd:InterpretiveBasisType ,
+             skos:Concept ;
+    rdfs:label "Direct evidence basis"@en ;
+    rdfs:label "직접 근거"@ko ;
+    skos:prefLabel "Direct evidence basis"@en ;
+    skos:prefLabel "직접 근거"@ko ;
+    skos:definition "An interpretive basis in which the assertion is supported by an explicit statement, title, label, inscription, directly observable feature, or other comparatively direct indication in the source material."@en ;
+    skos:definition "자료의 명시적 진술, 표제, 명문, 문자면, 직접 관찰 가능한 특징 등 비교적 직접적인 표시가 해석적 진술의 근거가 되는 경우입니다."@ko ;
+    skos:scopeNote "This value characterizes the basis of the interpretation only; it does not itself imply high confidence."@en ;
+    skos:scopeNote "이 값은 해석의 근거 방식만을 나타내며, 그 자체로 높은 신뢰도를 뜻하지 않습니다."@ko .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#InferentialBasis
+ekcd:InferentialBasis
+    rdf:type owl:NamedIndividual ,
+             ekcd:InterpretiveBasisType ,
+             skos:Concept ;
+    rdfs:label "Inferential basis"@en ;
+    rdfs:label "추론적 근거"@ko ;
+    skos:prefLabel "Inferential basis"@en ;
+    skos:prefLabel "추론적 근거"@ko ;
+    skos:definition "An interpretive basis in which the assertion is derived by reasoning from multiple, indirect, or mutually supporting pieces of evidence rather than from an explicit statement of the asserted relation."@en ;
+    skos:definition "주장된 관계가 자료에 명시되어 있지 않지만, 복수의 근거·간접 근거·상호 보강되는 근거를 종합하여 추론하는 경우입니다."@ko ;
+    skos:scopeNote "This value does not prescribe a confidence level; an inferential assertion may be assigned high, medium, or low confidence depending on the evidence and research judgment."@en ;
+    skos:scopeNote "이 값은 신뢰도 수준을 미리 정하지 않습니다. 추론적 진술도 근거와 연구 판단에 따라 높음·중간·낮음의 신뢰도를 가질 수 있습니다."@ko .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#ContextualBasis
+ekcd:ContextualBasis
+    rdf:type owl:NamedIndividual ,
+             ekcd:InterpretiveBasisType ,
+             skos:Concept ;
+    rdfs:label "Contextual basis"@en ;
+    rdfs:label "맥락적 근거"@ko ;
+    skos:prefLabel "Contextual basis"@en ;
+    skos:prefLabel "맥락적 근거"@ko ;
+    skos:definition "An interpretive basis in which the assertion is supported primarily by broader historical, textual, visual, social, or political context rather than by direct correspondence or an explicit source statement."@en ;
+    skos:definition "직접 대응이나 명시적 자료 진술보다는 보다 넓은 역사적·문헌적·시각적·사회적·정치적 맥락이 주된 근거가 되는 경우입니다."@ko ;
+    skos:scopeNote "This value characterizes contextual support and does not itself imply low confidence."@en ;
+    skos:scopeNote "이 값은 맥락적 근거 방식을 나타내며, 그 자체로 낮은 신뢰도를 뜻하지 않습니다."@ko .
+
+
+### http://dh.aks.ac.kr/ontologies/ekcd#HighConfidence
+ekcd:HighConfidence
+    rdf:type owl:NamedIndividual ,
+             ekcd:InterpretiveConfidenceLevel ,
+             skos:Concept ;
+    rdfs:label "High confidence"@en ;
+    rdfs:label "높은 신뢰도"@ko ;
+    skos:prefLabel "High"@en ;
+    skos:prefLabel "높음"@ko ;
+    skos:definition "A high degree of confidence assigned to an interpretive assertion after consideration of the available evidence and relevant alternatives."@en ;
+    skos:definition "가용한 근거와 관련 대안 해석을 검토한 결과 해석적 진술에 높은 정도의 확신을 부여하는 경우입니다."@ko .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#MediumConfidence
+ekcd:MediumConfidence
+    rdf:type owl:NamedIndividual ,
+             ekcd:InterpretiveConfidenceLevel ,
+             skos:Concept ;
+    rdfs:label "Medium confidence"@en ;
+    rdfs:label "중간 신뢰도"@ko ;
+    skos:prefLabel "Medium"@en ;
+    skos:prefLabel "중간"@ko ;
+    skos:definition "A moderate degree of confidence assigned to an interpretive assertion when the evidence supports the interpretation but meaningful uncertainty or alternative readings remain."@en ;
+    skos:definition "근거가 해당 해석을 지지하지만 의미 있는 불확실성이나 대안적 해석이 남아 있어 중간 정도의 확신을 부여하는 경우입니다."@ko .
+
+### http://dh.aks.ac.kr/ontologies/ekcd#LowConfidence
+ekcd:LowConfidence
+    rdf:type owl:NamedIndividual ,
+             ekcd:InterpretiveConfidenceLevel ,
+             skos:Concept ;
+    rdfs:label "Low confidence"@en ;
+    rdfs:label "낮은 신뢰도"@ko ;
+    skos:prefLabel "Low"@en ;
+    skos:prefLabel "낮음"@ko ;
+    skos:definition "A low degree of confidence assigned to an interpretive assertion when the interpretation remains tentative because the available evidence is limited, ambiguous, or compatible with substantial alternatives."@en ;
+    skos:definition "가용한 근거가 제한적이거나 모호하고 상당한 대안 해석이 가능하여 해석적 진술을 잠정적으로 제시하는 경우입니다."@ko .
+
+
+#################################################################
+# Deprecated legacy mixed values from EKCD v1.1.x
 #################################################################
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#Direct
 ekcd:Direct
     rdf:type owl:NamedIndividual ,
-             ekcd:InterpretiveConfidenceLevel ,
              skos:Concept ;
-    rdfs:label "Direct correspondence"@en ;
-    rdfs:label "직접 대응"@ko ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Direct correspondence (legacy)"@en ;
+    rdfs:label "직접 대응 (레거시)"@ko ;
     skos:prefLabel "Direct"@en ;
     skos:prefLabel "직접 대응"@ko ;
-    skos:definition "A confidence level assigned to a correspondence explicitly supported by a title, label, textual statement, or other direct evidence in the source material."@en ;
-    skos:definition "자료의 표제, 명문, 문자면, 기사 등 직접 근거에 의해 확인되는 대응 관계에 부여하는 신뢰도 수준입니다."@ko .
+    skos:definition "A legacy EKCD v1.1.x controlled value that combined the directness of evidential support with an implicit confidence judgment."@en ;
+    skos:definition "직접적인 근거 방식과 암묵적인 신뢰도 판단을 하나의 값에 결합했던 EKCD v1.1.x의 레거시 통제값입니다."@ko ;
+    skos:scopeNote "Deprecated for new data. Use ekcd:hasInterpretiveBasis ekcd:DirectEvidenceBasis and assign ekcd:hasInterpretiveConfidence independently. No automatic mapping to ekcd:HighConfidence is asserted."@en ;
+    skos:scopeNote "새 데이터에서는 사용하지 않습니다. ekcd:hasInterpretiveBasis ekcd:DirectEvidenceBasis를 사용하고 ekcd:hasInterpretiveConfidence를 독립적으로 부여합니다. ekcd:HighConfidence로 자동 대응시키지 않습니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#Probable
 ekcd:Probable
     rdf:type owl:NamedIndividual ,
-             ekcd:InterpretiveConfidenceLevel ,
              skos:Concept ;
-    rdfs:label "Probable correspondence"@en ;
-    rdfs:label "유력한 대응"@ko ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Probable correspondence (legacy)"@en ;
+    rdfs:label "유력한 대응 (레거시)"@ko ;
     skos:prefLabel "Probable"@en ;
     skos:prefLabel "유력한 대응"@ko ;
-    skos:definition "A confidence level assigned to a correspondence strongly inferred from multiple pieces of evidence, even when the source materials do not explicitly equate the related units."@en ;
-    skos:definition "자료가 두 단위를 직접 동일시하지는 않지만, 복수의 근거와 맥락상 강하게 추론되는 대응 관계에 부여하는 신뢰도 수준입니다."@ko .
+    skos:definition "A legacy EKCD v1.1.x controlled value that combined inferential support with a confidence judgment."@en ;
+    skos:definition "추론적 근거 방식과 신뢰도 판단을 하나의 값에 결합했던 EKCD v1.1.x의 레거시 통제값입니다."@ko ;
+    skos:scopeNote "Deprecated for new data. Use ekcd:hasInterpretiveBasis ekcd:InferentialBasis and assign ekcd:hasInterpretiveConfidence independently. No automatic mapping to a particular confidence level is asserted."@en ;
+    skos:scopeNote "새 데이터에서는 사용하지 않습니다. ekcd:hasInterpretiveBasis ekcd:InferentialBasis를 사용하고 ekcd:hasInterpretiveConfidence를 독립적으로 부여합니다. 특정 신뢰도 수준으로 자동 대응시키지 않습니다."@ko .
 
 ### http://dh.aks.ac.kr/ontologies/ekcd#Contextual
 ekcd:Contextual
     rdf:type owl:NamedIndividual ,
-             ekcd:InterpretiveConfidenceLevel ,
              skos:Concept ;
-    rdfs:label "Contextual association"@en ;
-    rdfs:label "맥락적 연관"@ko ;
+    owl:deprecated "true"^^xsd:boolean ;
+    rdfs:label "Contextual association (legacy)"@en ;
+    rdfs:label "맥락적 연관 (레거시)"@ko ;
     skos:prefLabel "Contextual"@en ;
     skos:prefLabel "맥락적 연관"@ko ;
-    skos:definition "A confidence level assigned to a weaker interpretive association based on broader historical, textual, visual, or political context rather than direct correspondence."@en ;
-    skos:definition "직접 대응이나 유력한 대응은 아니지만, 역사적·문헌적·시각적·정치적 맥락 안에서 관련성이 인정되는 관계에 부여하는 신뢰도 수준입니다."@ko .
-
+    skos:definition "A legacy EKCD v1.1.x controlled value that combined contextual support with an implicit weaker-confidence judgment."@en ;
+    skos:definition "맥락적 근거 방식과 암묵적인 낮은 신뢰도 판단을 하나의 값에 결합했던 EKCD v1.1.x의 레거시 통제값입니다."@ko ;
+    skos:scopeNote "Deprecated for new data. Use ekcd:hasInterpretiveBasis ekcd:ContextualBasis and assign ekcd:hasInterpretiveConfidence independently. No automatic mapping to ekcd:LowConfidence is asserted."@en ;
+    skos:scopeNote "새 데이터에서는 사용하지 않습니다. ekcd:hasInterpretiveBasis ekcd:ContextualBasis를 사용하고 ekcd:hasInterpretiveConfidence를 독립적으로 부여합니다. ekcd:LowConfidence로 자동 대응시키지 않습니다."@ko .
 
 
 ###  Generated (partly) by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
