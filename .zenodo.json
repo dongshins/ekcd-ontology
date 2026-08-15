@@ -1,8 +1,8 @@
 {
   "title": "EKCD: An EKC-derived Ontology for Korean Cultural Heritage Knowledge Modeling",
-  "version": "1.1.5",
-  "publication_date": "2026-08-14",
-  "description": "EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions while preserving conceptual continuity with the EKC ontology line. Version 1.1.5 is a non-breaking metadata and discoverability revision that preserves the vocabulary terms and modeling semantics of v1.1.2 while refining ontology-level publisher metadata, version metadata, and geographical discoverability.",
+  "version": "1.2.0",
+  "publication_date": "2026-08-15",
+  "description": "EKCD is an EKC-derived ontology in OWL/Turtle for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It provides additional datatype properties for dates and URLs, local application guidelines for standard semantic mapping properties, and project-level semantic extensions while preserving conceptual continuity with the EKC ontology line. Version 1.2.0 is a non-breaking vocabulary-expansion and semantic-model refinement release. It separates interpretive basis from epistemic confidence in the EKCD interpretive-assertion model, deprecates the legacy mixed values Direct, Probable, and Contextual for new data, and clarifies the methodological relationship to CRMinf without introducing a formal CRMinf dependency or alignment.",
   "creators": [
     {
       "name": "SEO, Dong Shin",
@@ -34,7 +34,11 @@
     "Korean studies",
     "Korea",
     "EKC",
-    "EKCD"
+    "EKCD",
+    "interpretive modeling",
+    "provenance",
+    "epistemic confidence",
+    "CRMinf"
   ],
   "related_identifiers": [
     {
@@ -43,7 +47,7 @@
       "resource_type": "software"
     },
     {
-      "identifier": "https://github.com/dongshins/ekcd-ontology/tree/v1.1.5",
+      "identifier": "https://github.com/dongshins/ekcd-ontology/tree/v1.2.0",
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
