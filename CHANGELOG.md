@@ -8,7 +8,7 @@ The project follows a conservative semantic-versioning practice for ontology rel
 
 ## [v1.2.0] - 2026-08-15
 
-**Zenodo DOI:** pending
+**Zenodo DOI:** https://doi.org/10.5281/zenodo.21946887
 
 ### Added
 - Added `ekcd:InterpretiveBasisType` to represent the basis on which an interpretive assertion is supported.
