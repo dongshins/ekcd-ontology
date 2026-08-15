@@ -3,11 +3,11 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19753664.svg)](https://doi.org/10.5281/zenodo.19753664)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-**EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, local guidance for semantic mapping properties, and project-level extensions for interpretive assertions, evidence tracking, confidence levels, and utterance modeling.
+**EKCD** is an EKC-derived ontology for Korean cultural heritage knowledge modeling, with a particular focus on historical and cultural resources of Korea. It extends the EKC ontology line with project-level modeling conventions, date- and URL-related datatype properties, local guidance for semantic mapping properties, and project-level extensions for interpretive assertions, evidence tracking, interpretive basis, epistemic confidence, and utterance modeling.
 
-**EKCD**는 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지입니다. EKC 온톨로지 계열을 바탕으로, 프로젝트 수준의 모델링 관례, 날짜 및 URL 관련 datatype property, 시맨틱 매핑 property의 로컬 적용 지침, 그리고 해석적 진술, 근거 추적, 신뢰도 수준, 발화 모델링을 위한 프로젝트 수준의 확장을 제공합니다. @ko 
+**EKCD**는 한국 문화유산 지식 모델링을 위한 EKC 파생 온톨로지입니다. EKC 온톨로지 계열을 바탕으로, 프로젝트 수준의 모델링 관례, 날짜 및 URL 관련 datatype property, 시맨틱 매핑 property의 로컬 적용 지침, 그리고 해석적 진술, 근거 추적, 해석 근거 유형, 인식론적 신뢰도, 발화 모델링을 위한 프로젝트 수준의 확장을 제공합니다. @ko 
 
-- Current release: **v1.1.5**
+- Current release: **v1.2.0**
 - Ontology IRI: `http://dh.aks.ac.kr/ontologies/ekcd`
 - Version IRI: `http://dh.aks.ac.kr/ontologies/ekcd_v1`
 - Preferred prefix: `ekcd`
@@ -20,20 +20,20 @@
 
 ## Overview
 
-EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. Version 1.1.5 preserves the vocabulary terms and modeling semantics of v1.1.2 while refining ontology-level publisher metadata, version metadata, and geographical discoverability through an explicit reference to Korea.
+EKCD supports RDF/OWL modeling for Korean cultural heritage data derived from, or aligned with, the EKC ontology family. Version 1.2.0 refines the interpretive-assertion model by separating two independent dimensions: the basis on which an interpretation is made and the epistemic confidence assigned to that interpretation. It also clarifies the methodological relationship between EKCD's lightweight evidence-traceability pattern and CRMinf without introducing a formal CRMinf dependency or alignment.
 
-EKCD는 EKC 온톨로지 계열에서 파생·정리된 한국 문화유산 데이터의 RDF/OWL 모델링을 지원합니다. Version 1.1.5는 v1.1.2의 vocabulary terms와 모델링 의미를 유지하면서, ontology-level publisher metadata와 version metadata를 정비하고 Korea에 대한 명시적 언급을 통해 지리적 검색 가능성을 보완하였습니다.
+EKCD는 EKC 온톨로지 계열에서 파생·정리된 한국 문화유산 데이터의 RDF/OWL 모델링을 지원합니다. Version 1.2.0은 해석적 진술이 성립하는 근거 방식과 그 해석에 부여되는 인식론적 신뢰도를 서로 독립된 두 차원으로 분리하여 interpretive-assertion 모델을 정비하였습니다. 또한 CRMinf를 형식적으로 import하거나 정렬하지 않으면서, EKCD의 경량 evidence-traceability 모델과 CRMinf 사이의 방법론적 관계를 명확히 하였습니다.
 
 The ontology currently includes:
 
-| Category | Count in v1.1.5 | Notes |
+| Category | Count in v1.2.0 | Notes |
 |---|---:|---|
-| OWL classes | 11 | Adds EKCD classes for interpretive assertions, confidence levels, and utterance modeling, while retaining `ekc:3D_모델`, `ekc:3D_지도`, `voaf:Vocabulary`, `skos:Concept`, and `prov:Entity` declarations. |
-| OWL object properties | 36 | Adds EKCD-local properties for interpretive assertions, correspondence, contextual relation, evidence derivation, confidence, and utterance modeling. |
-| OWL datatype properties | 8 | Adds EKCD-local properties for access URLs, date modeling, evidence notes, evidence locations, and utterance text. |
+| OWL classes | 12 | Includes EKCD classes for interpretive assertions, interpretive basis, confidence levels, and utterance modeling, while retaining `ekc:3D_모델`, `ekc:3D_지도`, `voaf:Vocabulary`, `skos:Concept`, and `prov:Entity` declarations. |
+| OWL object properties | 37 | Includes EKCD-local properties for interpretive assertions, correspondence, contextual relation, interpretive basis, evidence derivation, epistemic confidence, and utterance modeling. |
+| OWL datatype properties | 8 | Includes EKCD-local properties for access URLs, date modeling, evidence notes, evidence locations, and utterance text. |
 | OWL annotation properties | 19 | Retains explicit declarations for EKCD and VANN annotation properties. |
-| OWL named individuals | 7 | Includes EKC/EKCD ontology resources, the DH-AKS organization resource, and interpretive confidence values. |
-| SKOS concepts | 3 | Includes `ekcd:Direct`, `ekcd:Probable`, and `ekcd:Contextual` as controlled confidence values. |
+| OWL named individuals | 13 | Includes EKC/EKCD ontology and vocabulary resources, the DH-AKS organization resource, six current controlled values for interpretive basis and epistemic confidence, and three deprecated legacy values. |
+| SKOS concepts | 9 | Includes three interpretive-basis values (`ekcd:DirectEvidenceBasis`, `ekcd:InferentialBasis`, `ekcd:ContextualBasis`), three epistemic-confidence values (`ekcd:HighConfidence`, `ekcd:MediumConfidence`, `ekcd:LowConfidence`), and the three deprecated legacy values `ekcd:Direct`, `ekcd:Probable`, and `ekcd:Contextual`. |
 
 ## Namespace policy
 
@@ -112,10 +112,20 @@ For utterance-centered historical modeling, EKCD adds `ekcd:Utterance` and its s
 | Modeling need | Main EKCD terms |
 |---|---|
 | Interpretive assertion | `ekcd:InterpretiveAssertion`, `ekcd:assertsSubject`, `ekcd:assertsPredicate`, `ekcd:assertsObject` |
-| Evidence and confidence | `prov:wasDerivedFrom`, `ekcd:evidenceLocation`, `ekcd:evidenceNote`, `ekcd:hasInterpretiveConfidence` |
-| Confidence values | `ekcd:Direct`, `ekcd:Probable`, `ekcd:Contextual` |
+| Evidence / provenance | `prov:wasDerivedFrom`, `ekcd:evidenceLocation`, `ekcd:evidenceNote` |
+| Interpretive basis | `ekcd:hasInterpretiveBasis`, `ekcd:DirectEvidenceBasis`, `ekcd:InferentialBasis`, `ekcd:ContextualBasis` |
+| Epistemic confidence | `ekcd:hasInterpretiveConfidence`, `ekcd:HighConfidence`, `ekcd:MediumConfidence`, `ekcd:LowConfidence` |
+| Legacy values (deprecated) | `ekcd:Direct`, `ekcd:Probable`, `ekcd:Contextual` |
 | Utterance modeling | `ekcd:Utterance`, `ekcd:RoyalUtterance`, `ekcd:RoyalCommand`, `ekcd:RetrospectiveUtterance` |
 | Utterance relations | `ekcd:hasSpeaker`, `ekcd:utteranceAbout`, `ekcd:isUtteranceRecordedIn`, `ekcd:retrospectivelyFrames`, `ekcd:utteranceText` |
+
+### Relation to CRMinf
+
+EKCD's interpretive-assertion layer is a lightweight, project-level modeling pattern intended primarily to distinguish historical evidence from researcher interpretation and to preserve traceability between interpretive assertions and their supporting evidence.
+
+This concern is conceptually related to CRMinf, which provides a more detailed ontology for argumentation and inference making. EKCD v1.2.0, however, does not import CRMinf and does not assert formal equivalence, subsumption, or SKOS mapping relations between EKCD and CRMinf classes.
+
+CRMinf may therefore be used as a complementary model when a dataset requires more detailed representation of argumentation, inference making, belief adoption, or inference logic.
 
 ## Semantic mapping guidance
 
@@ -132,7 +142,7 @@ EKCD distinguishes strict identity from conceptual, contextual, or vocabulary ma
 
 ## Release history
 
-See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.1.5-ontology-revision.md`](docs/changes/v1.1.5-ontology-revision.md) for the detailed v1.1.5 ontology revision note.
+See [`CHANGELOG.md`](CHANGELOG.md) for version history and [`docs/changes/v1.2.0-ontology-revision.md`](docs/changes/v1.2.0-ontology-revision.md) for the detailed v1.2.0 ontology revision note.
 
 ## Citation
 <!-- For citing EKCD as an evolving ontology project across versions, use the concept DOI:
