@@ -6,6 +6,55 @@ The format follows a practical Keep-a-Changelog style, and version numbers follo
 
 The project follows a conservative semantic-versioning practice for ontology releases. Patch releases may include metadata clarification, documentation improvement, local authoring-policy clarification, and non-breaking vocabulary declarations. Minor releases may include non-breaking vocabulary expansion.
 
+## [v1.2.0] - 2026-08-15
+
+**Zenodo DOI:** pending
+
+### Added
+- Added `ekcd:InterpretiveBasisType` to represent the basis on which an interpretive assertion is supported.
+- Added `ekcd:hasInterpretiveBasis`.
+- Added controlled interpretive-basis values:
+  - `ekcd:DirectEvidenceBasis`
+  - `ekcd:InferentialBasis`
+  - `ekcd:ContextualBasis`
+- Added independent epistemic-confidence values:
+  - `ekcd:HighConfidence`
+  - `ekcd:MediumConfidence`
+  - `ekcd:LowConfidence`
+- Added ontology-level and term-level references and scope notes clarifying the methodological relationship between EKCD and CRMinf.
+
+### Changed
+- Refined `ekcd:InterpretiveAssertion` so that interpretive basis and epistemic confidence are modeled as independent dimensions.
+- Clarified `ekcd:hasInterpretiveConfidence` as an epistemic-confidence property rather than a combined indicator of evidential basis and confidence.
+- Clarified the EKCD-local use of `prov:wasDerivedFrom` as a lightweight provenance/evidence link.
+- Updated `owl:versionInfo` from `EKCD v1.1.5` to `EKCD v1.2.0`.
+- Updated `owl:priorVersion` and `dcterms:replaces` to identify v1.1.5.
+- Updated `dcterms:modified` for the v1.2.0 release.
+
+### Deprecated
+- Deprecated the legacy mixed values `ekcd:Direct`, `ekcd:Probable`, and `ekcd:Contextual` for new data.
+- The legacy IRIs are retained for backward reference, but no automatic mapping from these values to the new confidence levels is asserted.
+
+### Compatibility
+- No existing class, object-property, datatype-property, or annotation-property IRI has been removed.
+- Existing ABox data using `ekcd:Direct`, `ekcd:Probable`, or `ekcd:Contextual` remains syntactically usable, but migration to the two-axis model is recommended.
+- Legacy values should not be mechanically converted to `HighConfidence`, `MediumConfidence`, or `LowConfidence`; interpretive basis and confidence should be reassessed independently.
+- EKCD v1.2.0 does not import or formally align to CRMinf.
+
+### Diff summary against v1.1.5
+
+| Metric | v1.1.5 | v1.2.0 | Change |
+|---|---:|---:|---:|
+| RDF triples | 322 | 418 | +96 |
+| Added triples | — | 122 | +122 |
+| Removed triples | — | 26 | -26 |
+| OWL classes | 11 | 12 | +1 |
+| OWL object properties | 36 | 37 | +1 |
+| OWL datatype properties | 8 | 8 | 0 |
+| OWL annotation properties | 19 | 19 | 0 |
+| OWL named individuals | 7 | 13 | +6 |
+| SKOS concepts | 3 | 9 | +6 |
+
 ## [v1.1.5] - 2026-08-14
 
 **Zenodo DOI:** https://doi.org/10.5281/zenodo.21936376
